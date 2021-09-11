@@ -23,6 +23,11 @@ body {
   background-color: rgb(54, 54, 54);
 }
 
+#color-palette {
+   padding: 15px 0;
+    text-align: left;
+    width: auto;
+}
 .description {
   padding: 15px 0;
 }
