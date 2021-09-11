@@ -1,32 +1,35 @@
 window.onload = function () {
 
   let newDiv;
-  let divInLine;
+  let colorInLine;
+  let colors;
 
   createPaletteColor(4);
 
-  function createDiv(pixelSize, marginSize) {
+  function createDiv(divHeight, divWidth, marginSize, borderStyle, displayType) {
     newDiv = document.createElement('div');
-    newDiv.style.border = '1px solid black';
-    newDiv.style.display = 'inline-block';
+    newDiv.style.border = borderStyle;
+    newDiv.style.display = displayType;
     newDiv.style.margin = marginSize;
-    newDiv.style.height = pixelSize;
-    newDiv.style.width = pixelSize;
+    newDiv.style.height = divHeight;
+    newDiv.style.width = divWidth;
     return newDiv;
   }
 
   function createPaletteColor(n) {
     for (let i = 0; i < n; i += 1) {
-      createDiv('20px', '5px');
+      createDiv('20px', '20px', '0 5px', '1px solid black', 'inline-block');
       newDiv.setAttribute('class', 'color');
-      document.getElementById('color-palette').appendChild(newDiv);
-      divInLine += newDiv;
+      let colorPalette = document.getElementById('color-palette');
+      colorPalette.style.height = '22px';
+      colorPalette.appendChild(newDiv);
+      colorInLine += newDiv;
     }
-    let colorOfPallete = document.getElementsByClassName('color');
-    colorOfPallete[0].style.backgroundColor = 'rgb(0, 0, 0)';
-    colorOfPallete[1].style.backgroundColor = 'rgb(140, 140, 140)';
-    colorOfPallete[2].style.backgroundColor = 'rgb(217, 217, 217)';
-    colorOfPallete[3].style.backgroundColor = 'rgb(242, 242, 242)';
-    return divInLine;
+    colors = ['rgb(0, 0, 0)', 'rgb(140, 140, 140)', 'rgb(217, 217, 217)', 'rgb(242, 242, 242)'];
+    let colorOfPalette = document.getElementsByClassName('color');
+    for (let i2 = 0; i2 < colors.length; i2 += 1) {
+      colorOfPalette[i2].style.backgroundColor = colors[i2];
+    }
+    return colorInLine;
   }
 }
