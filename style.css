@@ -1,0 +1,165 @@
+/* Solution to hide the number input spinner found @:
+https://css-tricks.com/snippets/css/turn-off-number-input-spinners/
+I can't use it because the linter keeps complaining... --'
+*/
+
+/* input[ type = 'number' ]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+* , *:before , *:after {
+  box-sizing: border-box;
+  cursor: none;
+}
+
+body {
+
+  --cursor-color: black;
+
+  --cursor-border-color: white;
+
+  --selected-shadow-1: 0 0 0.5rem var(--cursor-color);
+
+  --selected-shadow-2: 0 0 1.5rem var(--cursor-border-color);
+
+  --selected-shadow: var(--selected-shadow-1), var(--selected-shadow-2);
+  min-width: 800px;
+  width: max-content;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  grid-gap: 1rem;
+  padding: 5rem;
+}
+
+#title {
+  padding: 0.2rem 1.5rem;
+  border-radius: 5rem;
+  box-shadow: var(--selected-shadow);
+  user-select: none;
+}
+
+#color-palette {
+  display: flex;
+  gap: 1rem;
+}
+
+#board-size {
+  width: 11.5ch;
+  padding: 1px 0 1px 1.5ch;
+}
+
+/* Custom cursor idea from 'Circle Cursors' pen by Chris Heuberger, available @:
+   https://codepen.io/ChrisBup/pen/rNwLyzV */
+
+#custom-cursor {
+  position: fixed;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  background-color: var(--cursor-color);
+  border: 0.3rem solid var(--cursor-border-color);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: background ease-in 100ms,
+    box-shadow ease-in 150ms,
+    border ease-in 150ms,
+    transform ease-in 150ms;
+
+  /* promote it to its own layer to enable hardware accelerated rendering: */
+  transform: translate3d(0, 0, 0);
+}
+
+#custom-cursor:before {
+
+  /* How to create a colorwheel, adapted from MDN docs, available @:
+  https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient()#syntax */
+
+  --first-third: hsl(360, 100%, 50%), hsl(315, 100%, 50%), hsl(270, 100%, 50%);
+
+  --second-third: hsl(225, 100%, 50%), aqua, hsl(135, 100%, 50%);
+
+  --third-third: chartreuse, hsl(45, 100%, 50%), red;
+
+  --color-wheel: var(--first-third), var(--second-third), var(--third-third);
+  background-image: conic-gradient(var(--color-wheel));
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 150ms ease-in;
+}
+
+.rainbow-cursor:hover ~ #custom-cursor:after {
+  content: 'Gerar nova paleta de cores';
+  white-space: pre-wrap;
+  position: absolute;
+  left: 110%;
+  padding: 25%;
+  border-radius: 0 5em 5em 0;
+  height: max-content;
+  width: max-content;
+  color: hsl(225, 50%, 85%);
+  background-color: hsl(135, 50%, 10%);
+  z-index: 1;
+}
+
+.rainbow-cursor:hover ~ #custom-cursor {
+  border: none;
+}
+
+.rainbow-cursor:hover ~ #custom-cursor:before {
+  opacity: 1;
+}
+
+.small-border-cursor:hover ~ #custom-cursor {
+  box-shadow: none;
+  border: 2px solid var(--cursor-border-color);
+}
+
+.small-cursor:hover ~ #custom-cursor {
+  transform: scale(0.5);
+}
+
+.color {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+}
+
+.color:not( .fixed-color ):hover:after {
+
+  /* How to insert line breaks inside content, found @:
+  https://www.digitalocean.com/community/tutorials/css-line-break-content-property */
+  content: 'Um clique: Selecionar cor \A Dois cliques: Gerar nova cor';
+  white-space: pre-wrap;
+  position: absolute;
+  left: 110%;
+  top: 20%;
+  padding: 10%;
+  border-radius: 0 5em 5em 0;
+  height: max-content;
+  width: max-content;
+  color: hsl(225, 50%, 85%);
+  background-color: hsl(135, 50%, 10%);
+  z-index: 1;
+}
+
+.selected {
+  box-shadow: var(--selected-shadow);
+}
+
+.boardLine {
+  display: flex;
+}
+
+.pixel {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}

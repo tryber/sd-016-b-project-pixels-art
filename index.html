@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="title" class="rainbow-cursor">Paleta de Cores</h1>
+    <section>
+      <div id="color-palette">
+        <div class="color fixed-color selected"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+      </div>
+    </section>
+    <section class="small-border-cursor small-cursor">
+      <button id="clear-board">Limpar</button>
+      <label>Tamanho do quadro:</label>
+      <input
+        type="number"
+        name="boardSize"
+        id="board-size"
+        max="50"
+        min="1"
+        placeholder="Tamanho"
+      />
+      <button id="generate-board">VQV</button>
+    </section>
+    <section class="small-border-cursor">
+      <div id="pixel-board"></div>
+    </section>
+    <!-- Custom cursor idea from 'Circle Cursors' pen by Chris Heuberger, available @:
+    https://codepen.io/ChrisBup/pen/rNwLyzV -->
+    <div id="custom-cursor"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
