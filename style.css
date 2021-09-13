@@ -1,0 +1,100 @@
+@font-face {
+  src: url('ccoverbyteoffregular.otf');
+  font-family: nos;
+
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border: solid black 1px;
+  background-color: white;
+}
+
+.black {
+  background-color: black;
+}
+
+.color {
+  margin-right: 5px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  border: solid black 1px;
+  border-radius: 100%;
+}
+
+.line {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#pixel-board {
+  margin-top: 100px;
+}
+
+h1 {
+  border: solid 3px white;
+  padding: 30px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+body {
+  font-family: nos, monospace;
+  text-align: center;
+  background-image: url('games.jpg');
+}
+
+#clear-board {
+  margin-right: 30px;
+}
+
+.menu {
+  margin-bottom: 50px;
+  margin-top: 20px;
+  background-image: none;
+}
+
+.header {
+  margin: 30px;
+
+}
+
+footer {
+  background-image: url('bot2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+}
+
+p {
+  padding: 20px;
+}
+
+button {
+  font-family: monospace;
+  border-radius: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.842);
+  color: white;
+}
+
+#board-size {
+  padding: 15px 32px;
+  margin-right: 20px;
+}
