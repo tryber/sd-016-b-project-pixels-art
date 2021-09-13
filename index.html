@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+  <title>Pixels Art</title>
+</head>
+<body>
+  <header>
+    <h1 id="title">Paleta de Cores</h1>
+  </header>
+  <main>
+    <div id="color-palette">
+      <div class="color selected"></div>
+      <div class="color"></div>
+      <div class="color"></div>
+      <div class="color"></div>
+    </div>
+    <div id="pixel-board-interactions">
+      <input type="number" id="board-size" min="1" placeholder="Tamanho do quadro">
+      <button id="generate-board">VQV</button>
+      <button id="clear-board">Limpar</button>
+    </div>
+    <div id="pixel-board"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
