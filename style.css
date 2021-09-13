@@ -1,0 +1,57 @@
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#color-palette {
+  display: flex;
+  justify-content: space-around;
+}
+
+.color {
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.color:nth-child( 1 ) {
+  background-color: black;
+}
+
+.color:nth-child( 2 ) {
+  background-color: green;
+}
+
+.color:nth-child( 3 ) {
+  background-color: yellow;
+}
+
+.color:nth-child( 4 ) {
+  background-color: blue;
+}
+
+#pixel-board {
+  margin-top: 30px;
+}
+
+.line1 , .line2 , .line3 , .line4 , .line5 {
+  display: flex;
+  justify-content: center;
+}
+
+.pixel {
+  background-color: white;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+}
