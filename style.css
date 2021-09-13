@@ -1,0 +1,38 @@
+.color {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border: 1px black solid;
+}
+
+/* Reference */
+
+/* ref: Author: Josh Crozies */
+
+/* Obj: removing spaces between divs */
+
+/* Src: https://stackoverflow.com/questions/19038799/ */
+#pixel-board {
+  width: 210px;
+  font-size: 0;
+}
+
+.color-pallete {
+  height: 40px;
+  vertical-align: top;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+#clear-board {
+  margin: 10px;
+}
+
+#board-size {
+  width: 53px;
+}
