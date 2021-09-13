@@ -1,0 +1,39 @@
+body {
+  background-color: rgb(255, 236, 236);
+}
+
+.color {
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin: 1px;
+}
+
+.color:hover {
+  cursor: pointer;
+}
+
+.selected {
+  border-radius: 50%;
+}
+
+#pixel-board {
+  border: 1px solid black;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.pixel {
+  display: inline-block;
+  background-color: white;
+  margin: 0;
+  border: 1px solid black;
+  font-size: 12px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.pixel:hover {
+  cursor: pointer;
+}
