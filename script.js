@@ -1,24 +1,24 @@
 // criando a matriz do quadro de pintura 5x5:
 let n = 5; // numero de linhas e colunas (matriz quadrada)
-function createMatriz (n) {
+function createMatriz(n) {
  // o loop abaixo cria as linhas:
- for (let i = 0; i < n; i += 1) {
-  const matriz = document.getElementById('pixel-board');
-  const createLine = document.createElement('div');
-  createLine.className = 'line';
-  matriz.appendChild(createLine);
- }
- const line = document.getElementsByClassName('line');
- // o loop abaixo pega cada linha e acrescenta colunas:
- for (let i = 0; i < n; i += 1) {
-  for (let j = 0; j < n; j += 1) {
-    const createColumn = document.createElement('div');
-    createColumn.className = 'pixel';
-    line[i].appendChild(createColumn);
+  for (let i = 0; i < n; i += 1) {
+    const matriz = document.getElementById('pixel-board');
+    const createLine = document.createElement('div');
+    createLine.className = 'line';
+    matriz.appendChild(createLine);
   }
- }
-} 
-createMatriz (n);  
+  const line = document.getElementsByClassName('line');
+  // o loop abaixo pega cada linha e acrescenta colunas:
+  for (let i = 0; i < n; i += 1) {
+    for (let j = 0; j < n; j += 1) {
+      const createColumn = document.createElement('div');
+      createColumn.className = 'pixel';
+      line[i].appendChild(createColumn);
+    }
+  }
+}
+createMatriz(n);
 /*
 // gerar cores aletorias: 
 function gerarCorRandom() {
@@ -50,27 +50,27 @@ function selectedPaint() {
 selectedPaint();
 
 // pintar pixel apos selecionar a cor e somente o pixel desejado:
-function Paint () {
-const matrixPaint = document.getElementById('pixel-board');
-matrixPaint.addEventListener('click', (event) => {
+function Paint() {
+  const matrixPaint = document.getElementById('pixel-board');
+  matrixPaint.addEventListener('click', (event) => {
   if (event.target.className === 'pixel') {
-    const currentColor = document.querySelector('.selected').id; //cor atual selecionada
-    const changeColorPixel = event.target; 
-    changeColorPixel.style.backgroundColor = currentColor; //muda a cor do pixel para a cor selecionada
-  }
-});
+      const currentColor = document.querySelector('.selected').id; // cor atual selecionada
+      const changeColorPixel = event.target;
+      changeColorPixel.style.backgroundColor = currentColor; // muda a cor do pixel para a cor selecionada
+    }
+  });
 }
-Paint ();
+Paint();
 
 // Apagar todo o quadro, deixando completamente branco:
 function clearBoard() {
-const buttonClear = document.getElementById('clear-board'); 
-const pixels = document.getElementsByClassName('pixel');
-buttonClear.addEventListener('click', () => {
-  for (let i = 0; i < pixels.length; i += 1) {   
-    pixels[i].style.backgroundColor = 'white';
-  }
-});
+  const buttonClear = document.getElementById('clear-board');
+  const pixels = document.getElementsByClassName('pixel');
+  buttonClear.addEventListener('click', () => {
+    for (let i = 0; i < pixels.length; i += 1) { 
+      pixels[i].style.backgroundColor = 'white';
+    }
+  });
 }
 clearBoard();
 
@@ -78,24 +78,23 @@ clearBoard();
 const input = document.getElementById('board-size');
 const buttonInitial = document.getElementById('generate-board');
 // numero digitado pelo usurario é adicionado ao n
-input.addEventListener('keyup',(event) => {
-  n = parseInt(event.target.value,10);
+input.addEventListener('keyup', (event) => {
+  n = parseInt(event.target.value, 10);
   if (n < 5) {
     n = 5;
   } else if ( n > 50) {
     n = 50;
-  } 
+  }
 });
-//botao que muda o tamanho do quadro de pintura caso receba um valor n:
+// botao que muda o tamanho do quadro de pintura caso receba um valor n:
 buttonInitial.addEventListener('click', () => {
   const myNode = document.getElementById('pixel-board');
   while (myNode.firstChild) {
-    myNode.removeChild(myNode.lastChild);  // fonte: https://qastack.com.br/programming/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+    myNode.removeChild(myNode.lastChild); // fonte: https://qastack.com.br/programming/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
   }
   if (input.value === '') {
-    alert("Board inválido!");
+    alert('Board inválido!');
   } else {
     createMatriz(n);
   }
 });
-
