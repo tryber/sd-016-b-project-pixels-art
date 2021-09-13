@@ -1,0 +1,40 @@
+body {
+	text-align: center;
+  background-image: url("background.jpg");
+  background-size: 2000px 1000px;
+}
+
+.color {
+  display: inline-block;
+  border: 1px solid rgb(0, 0, 0);
+  width: 40px;
+  height: 40px;
+}
+
+.linha {
+  display: block;
+}
+
+.pixel {
+  display: inline-block;
+  border: 1px solid rgb(0, 0, 0);
+  width: 40px;
+  height: 40px;
+  background-color: white;
+}
+
+.corBlack {
+  background-color: black;
+}
+
+.corBlue {
+  background-color: blue;
+}
+
+.corGreen {
+  background-color: green;
+}
+
+.corYellow {
+  background-color: yellow;
+}

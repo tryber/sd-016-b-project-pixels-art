@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paleta de Cores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 id="title">Paleta de Cores</h1>
+  
+  <div id="color-palette">
+    <div class="color corBlack"></div>
+    <div class="color corBlue"></div>
+    <div class="color corGreen"></div>
+    <div class="color corYellow"></div>
+  </div>
+  <br>
+  <button type="button" id="clear-board">Limpar</button>
+  
+  <!-- Tamanho do quadrado e limitação de caracter no site:
+  https://pt.stackoverflow.com/questions/382472/input-cpf-e-telefone-aceitar-s%C3%B3-numero 
+
+    aceitar numero positivos pelo site:
+    https://www.ti-enxame.com/pt/html/como-tornar-type-number-apenas-para-numeros-positivos/1041901479/-->
+
+  <input type="number" min="1" step="1" id="board-size" placeholder="numero entre 5 e 50" > 
+
+  <button type="button" id="generate-board">VQV</button>
+
+<!-- procurei como fazer botão no site: https://www.w3schools.com/tags/tag_button.asp -->
+  <br><br>
+  <div id="pixel-board">
+ 
+  </div>
+
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
