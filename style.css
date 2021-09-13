@@ -1,0 +1,46 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+
+header {
+  background-color: darkcyan;
+}
+
+#title {
+  background-color: aqua;
+}
+
+#color-palette {
+  background-color: chartreuse;
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  border: 1px black solid;
+  display: inline-block;
+}
+
+#pixel-board {
+  background-color: cornflowerblue;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.linha {
+  margin: 0 auto;
+  padding: 0;
+  height: 42px;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: 1px black solid;
+  display: inline-block;
+}
+
+/* não esqueça da linha em branco no final */

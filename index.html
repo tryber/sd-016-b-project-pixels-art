@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">  
+</head>
+<body>
+    <header><h1>Pixel Art</h1></header>
+    <main>
+        <section>
+            <h1 id='title'>Paleta de Cores</h1>
+        </section>
+        <section>
+            <div id='color-palette'></div>
+        </section>
+        <section>
+            <input id="board-size" type="number" min="1">
+            <button id="generate-board">#VQV</button>
+            <button id='clear-board'>Limpar</button>
+        </section>
+        <section>
+            <div id='pixel-board'></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!--    REQUISITOS
+OK  1. Título:  h1 com id='title' e texto "Paleta de Cores"
+OK   2. Paleta de cores: elemento id='color-palette' contendo elementos class='color'
+        * cor proibida "white"
+        * borda sólida preta com 1px
+        * cores lado a lado abaixo do título
+        * proibído cores repetidas
+OK  3. Cores: a primeira tem que ser "black"
+OK  4. Quadro: 25 elementos (inicialmente)
+        * 5 elementos por 5 elementos
+        * quadro id='pixel-board' pixel class='pixel'
+        * pixel precisam ser inicialmente "white"
+        * quadro abaixo da paleta de cores
+OK  5. 'pixel' com 40x40px incluindo borda e borda 1px 'black'
+OK  6. 'black' deve ser a cor inicial
+        * O elemento do 'black' tem class='selected'
+    7. A class='selected' deve habitar apenas 1 elemento por vez
+OK  8. Apos carregar a página deve ser possível pintar os 'pixels de preto'
+OK  9. Botão id='clear-board' que pinta todo o quadro de 'white'
+        * Posicionado entre a paleta e o quadro
+        * texto do botão = 'Limpar'
+
+    Como entregar: https://github.com/tryber/sd-016-b-project-pixels-art#depois-de-terminar-o-desenvolvimento
+    
+    BÔNUS:
+    10. Tamanho do quadro definido pelo usuário.
+        * input id='board-size' 5-50 + botão id='generate-board'
+        * input só aceita > 0 (usando os próprios atributos de input)
+        * botão texto='VQV'
+        * input e botão lado a lado e entre a paleta e o quadro
+        * alert 'Board inválido!' caso nenhum valor for passado
+        * o novo quadro deve ser preenchido de branco
+    11. Limite o mínimo e o máximo do board-size 
+        * se for menor que 5 usa 5
+        * se for maior que 50 usa 50
+    12. Cores da paleta geradas aleatórias ao carregar a página
+        * Mantendo a primeira sempre como preta
+
+  -->
+
+  <!-- Não esqueça a linha em branco no fim do arquivo -->
