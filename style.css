@@ -1,0 +1,32 @@
+#color-palette {
+  width: 168px;
+  margin: 0;
+}
+
+.color {
+  border: solid 1px black;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+#pixel-board {
+  border: solid 1px black;
+  width: 205px;
+  height: 204px;
+}
+
+.pixel {
+  border: solid 1px black;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: -1px -1px -4px 0;
+  background-color: white;
+}
+
+#clear-board {
+  background-color: black;
+  border-color: red;
+  color: white;
+}
