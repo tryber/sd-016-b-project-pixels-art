@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Draw | Arte em pixel</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <img src="images/square-2724387_1280.jpg" alt="Imagem de pixels" class="img1">
+        <img src="images/square-2724387_1280.jpg" alt="Imagem de pixels" class="img2">
+        <h1>Pixel Draw</h1>
+        <h2>Faça sua arte em pixel!</h2>
+    </header>
+    <main>
+        <article id="main-content">
+            <h1 id="title">Paleta de Cores</h1>
+            <div id="color-palette">
+                <div class="color black selected"></div>
+                <div class="color random-color"></div>
+                <div class="color random-color"></div>
+                <div class="color random-color"></div>
+            </div>
+            <button id="clear-board" class="btn">Limpar</button>
+            <div>
+                <input type="number" min="1" max="50" id="board-size" placeholder="Tamanho">
+                <button id="generate-board" class="btn">VQV</button>
+            </div>
+            <div id="pixel-board">
+                <div class="pixel-line"></div>
+                <div class="pixel-line"></div>
+                <div class="pixel-line"></div>
+                <div class="pixel-line"></div>
+                <div class="pixel-line"></div>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div>
+            Desenvolvido por <em><a href="https://julianesilvac75.github.io/">Juliane Cardoso</a> </em> &#128154;<br>
+            Imagem de <a href="https://pixabay.com/pt/users/davidzydd-985081/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2724387">David Zydd</a> por <a href="https://pixabay.com/pt/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2724387">Pixabay</a>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
