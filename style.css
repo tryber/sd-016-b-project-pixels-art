@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Comic Neue, cursive;
+  width: 100%;
+}
+
+#title {
+  color: rgb(53, 23, 87);
+  font-size: 32px;
+  text-align: center;
+  padding: 40px;
+}
+
+#color-palette {
+  text-align: center;
+}
+
+.color {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  height: 80px;
+  margin: 0 4px;
+  width: 80px;
+}
+
+.color:hover {
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.container-clear {
+  margin: 40px 0;
+  text-align: center;
+  width: 100%;
+}
+
+#pixel-board {
+  border: 1px solid black;
+  height: 210px;
+  margin: 40px auto;
+  width: 210px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  float: left;
+  height: 40px;
+  width: 40px;
+}
+
+.pixel:hover {
+  cursor: pointer;
+}
+
+#clear-board {
+  background-color: black;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+#clear-board:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
