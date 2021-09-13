@@ -1,0 +1,40 @@
+.color {
+  border: 1px solid black ;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+#paletablack {
+  background-color: black;
+}
+
+#paletared {
+  background-color: red;
+} 
+
+#paletagreen {
+  background-color: green;
+}
+
+#paletablue {
+  background-color: blue;
+}
+
+#pixel-board {
+  line-height: 0px;
+
+}
+
+.pixel {
+  display: inline-block;
+  border: 1px solid black ;
+  width: 40px;
+  height: 40px;
+}
+
+#clear-board {
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
