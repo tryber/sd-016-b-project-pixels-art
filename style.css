@@ -1,0 +1,41 @@
+body {
+  text-align: center;
+}
+
+#title {
+  color: red;
+}
+
+.color {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+#preto {
+  background-color: black;
+}
+
+#cinza {
+  background-color: grey;
+}
+
+#vermelho {
+  background-color: red;
+}
+
+#roxo {
+  background-color: purple;
+}
+.pixel {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
+}
+#pixel-board {
+  margin-top: 25px;
+  line-height: 0;
+}
