@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap') ;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('/image1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 70px;
+  text-align: center;
+  font-family: Homemade Apple, cursive;
+  color: rgb(41, 13, 43);
+  text-shadow: 5px, 5px, rgb(88, 30, 92);
+}
+
+#color-palette {
+  width: 100%;
+  text-align: center;
+}
+
+.color {
+  padding: 25px;
+  border: solid black 1px;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 100%;
+}
+
+.color:first-child {
+  background-color: black;
+}
+
+.btns {
+  text-align: center;
+}
+
+#clear-board {
+  display: block;
+  margin: 0 auto;
+  border-radius: 30%;
+  padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+#generate-board , #board-size {
+  text-align: center;
+  margin: 20px auto;
+  display: inline-block;
+  border-radius: 10%;
+  padding: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+input {
+  width: 250px;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 25px;
+  width: 100%;
+}
+
+#pixel-board {
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 0;
+}
+
+.pixel {
+  border: solid black 1px;
+  background-color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
