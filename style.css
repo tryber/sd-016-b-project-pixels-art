@@ -1,0 +1,66 @@
+body {
+  margin: 100px auto;
+  text-align: center;
+  background: #049dd9;
+}
+
+#color-palette * {
+  margin: 10px 10px 20px;
+}
+
+h1 {
+  font-size: 46px;
+  font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+}
+
+section .color {
+  border: solid 1px black;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+section .black {
+  background-color: black;
+}
+
+/* Pixel board */
+#pixel-board {
+  margin: 20px auto;
+  line-height: 0px;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  background-color: white;
+}
+
+.pixel:hover {
+  cursor: pointer;
+}
+
+.btn {
+  background-color: white;
+  border: solid 2px black;
+  padding: 4px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  font-weight: 900;
+}
+
+#board-size {
+  width: 67px;
+  background-color: white;
+  border: solid 2px black;
+  padding: 4px;
+}
+
+#clear-board {
+  margin-right: 30px;
+}
