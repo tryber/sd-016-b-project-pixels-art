@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  background-color: white;
+}
+
+.color {
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+}
+
+#clear-board {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+main {
+  text-align: center;
+}
+
+#pixel-board {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+}
+
+.line-pixel {
+  height: 40px;
+}
+
