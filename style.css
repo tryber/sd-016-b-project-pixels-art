@@ -1,0 +1,28 @@
+.color{
+    border: 1px solid black;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+#black-palette{
+    background-color: black;
+}
+#blue-palette{
+    background-color: blue;
+}
+#green-palette{
+    background-color: green;
+}
+#pink-palette{
+    background-color: pink;
+}
+#pixel-board .pixel-line{
+    display: flex;
+}
+.pixel{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+
