@@ -1,0 +1,67 @@
+body {
+  background-color: azure;
+}
+
+.color {
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 25%;
+  margin: 5px;
+}
+
+.color:hover {
+  margin-bottom: 25px;
+}
+
+.linha {
+  height: 40px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+
+#board-size , #generate-board , #clear-board {
+  margin: 0 5px 5px;
+  border-radius: 15px;
+}
+
+#board-size {
+  width: 110px;
+}
+
+#board-size:focus {
+  outline: 0;
+  border-color: aqua;
+}
+
+#generate-board {
+  background-color: rgb(34, 255, 107);
+  color: white;
+  border-color: rgb(34, 255, 107);
+}
+
+#clear-board {
+  background-color: rgb(241, 16, 16);
+  color: white;
+  border-color: rgb(241, 16, 16);
+}
+
+#title {
+  text-align: center;
+}
+
+#conteudoPrincipal {
+  margin: auto;
+  text-align: center;
+}
+
+.selected:hover {
+  border-width: 3px;
+}
