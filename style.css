@@ -1,0 +1,31 @@
+.color {
+  width: 50px;
+  height: 50px;
+  border: solid 1px black;
+  display: inline-block;
+}
+
+.preto {
+  background-color: black;
+}
+
+.verde {
+  background-color: green;
+}
+
+.azul {
+  background-color: blue;
+}
+
+.violeta {
+  background-color: violet;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  margin: 5px;
+  background-color: white;
+}
