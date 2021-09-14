@@ -1,0 +1,53 @@
+.color {
+  display: inline-block;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  border-radius: 30%;
+}
+
+/* Procurei no stackoverflow para conseguir reduzir os espaços entres os pixels
+link:https://stackoverflow.com/
+questions/5184512/cant-get-rid-of-spaces-between-inline-block-elements */
+
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  float: left;
+}
+
+#pixel-board {
+  background-color: white;
+  height: 210px;
+  width: 210px;
+  margin-left: 580px;
+}
+
+#title {
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+#color-palette {
+  text-align: center;
+}
+
+.side-a-side {
+  display: inline-block;
+  color: white;
+}
+
+#controlador {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  background-image: url('pixel-art.jpeg');
+}
