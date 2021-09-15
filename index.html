@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Project Pixels Art</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Paleta de Cores</h1>
+    </header>
+    <main>
+        <div id="color-palette">
+        </div>
+        <section id="button-input">
+        </section>
+        <div id="pixel-board">
+        </div>
+    </main>
+    <script>
+        let startSquarePixel = 5;
+        const parentElementButInp = document.getElementById('button-input');
+        const button = document.createElement('button');
+        let selectColorTem = '';
+
+        function createPalette() {
+            let palette = document.getElementById('color-palette');
+            for (let i = 0; i < 4; i++) {
+                let colorPalette = document.createElement('div');
+                switch (i) {
+                    case 0:
+                        colorPalette.classList.add('color', 'selected');
+                        selectColorTem = colorPalette.style.backgroundColor = 'black';
+                        break
+                    case 1:
+                        colorPalette.classList.add('color');
+                        colorPalette.style.backgroundColor = 'red';
+                        break;
+                    case 2:
+                        colorPalette.classList.add('color');
+                        colorPalette.style.backgroundColor = 'green';
+                        break;
+                    default:
+                        colorPalette.classList.add('color');
+                        colorPalette.style.backgroundColor = 'blue';
+                }
+                palette.appendChild(colorPalette);
+            }
+        }
+        createPalette();
+
+        function createFirstPixelSquare() {
+            let pixelFirstBoard = document.getElementById('pixel-board');
+            for (let ini = 0; ini < 5; ini += 1) {
+                let pixelFirstSquare = document.createElement('div');
+                pixelFirstBoard.appendChild(pixelFirstSquare)
+                for (let indi = 0; indi < 5; indi += 1) {
+                    let pixelFirst = document.createElement('div');
+                    pixelFirstSquare.appendChild(pixelFirst);
+                    pixelFirst.classList.add('pixel');
+                }
+            }
+        }
+        createFirstPixelSquare();
+
+        function getSelectColor() {
+            let element = document.getElementsByClassName('color');
+            for (let ind of element) {
+                ind.addEventListener('click', function () {
+                    selectColorTem = this.style.backgroundColor;
+                    const element = document.querySelector('.selected');
+                    element.classList.remove('selected');
+                    this.classList.add('selected');
+                });
+            }
+        }
+        getSelectColor();
+
+        function paintPixel() {
+            let squarePixel = document.getElementsByClassName('pixel');
+            for (let ind of squarePixel) {
+                ind.addEventListener('click', function () {
+                    this.style.backgroundColor = selectColorTem;
+                });
+            }
+        }
+        paintPixel();
+
+        function createButton(valueParent, valueButton) {
+            valueButton = document.createElement('button');
+            valueButton.type = 'submit';
+            valueButton.id = 'clear-board';
+            valueButton.innerText = 'Limpar';
+            valueButton.className = 'limpar';
+            valueParent.appendChild(valueButton);
+        }
+        createButton(parentElementButInp, button);
+
+        function createInput(parentElement) {
+            let input = document.createElement('input');
+            input.type = 'number';
+            input.id = 'board-size';
+            input.placeholder = 'Tamanho do tabuleiro';
+            input.min = '5';
+            input.max = '50';
+            input.className = 'borda-size';
+            parentElement.appendChild(input);
+        }
+        createInput(parentElementButInp);
+
+        function createButtonInput(parent, butValue) {
+            butValue.type = 'submit';
+            butValue.id = 'generate-board';
+            butValue.innerText = 'VQV';
+            butValue.className = 'button-input';
+            parent.appendChild(butValue);
+        }
+        createButtonInput(parentElementButInp, button);
+
+
+        function captureInput() {
+            let inputV = document.getElementById('board-size');
+            startSquarePixel = inputV.value;
+            if (startSquarePixel <= 0) {
+                alert('Board inválido!');
+            }
+            startSquarePixel = startSquarePixel < 5 ? 5 : startSquarePixel;
+            startSquarePixel = startSquarePixel > 50 ? 50 : startSquarePixel;
+            changePixelFrame(startSquarePixel);
+        }
+
+        const buttonVqv = document.getElementById('generate-board');
+        buttonVqv.addEventListener('click', captureInput);
+
+        function changePixelFrame(sizeSquare) {
+            let pixelSquare = document.getElementById('pixel-board');
+            pixelSquare.innerHTML = '';
+            pixelSquare.style.width = `${sizeSquare * 42}px`;
+            pixelSquare.style.height = `${sizeSquare * 42}px`;
+            for (let i = 0; i < sizeSquare; i += 1) {
+                let pixelLine = document.createElement('div');
+                pixelSquare.appendChild(pixelLine);
+                for (let index = 0; index < sizeSquare; index += 1) {
+                    let pixel = document.createElement('div');
+                    pixelLine.appendChild(pixel);
+                    pixel.classList.add('pixel');
+                }
+            }
+        }
+
+        function clearBoard() {
+            let clearSquare = document.getElementById('clear-board');
+            clearSquare.addEventListener('click', function () {
+                let squarePixel = document.getElementsByClassName('pixel');
+                for (let ind of squarePixel) {
+                    ind.style.backgroundColor = '';
+                }
+            });
+        }
+        clearBoard();
+    </script>
+</body>
+
+</html>
