@@ -1,0 +1,35 @@
+.color {
+    display: inline-block;
+    border: 1px black solid;
+    width: 60px;
+    height: 60px;
+}
+
+.color0 {
+    background-color: black;
+}
+
+.color1 {
+    background-color: #eb5e28;
+}
+
+.color2 {
+    background-color: #403d39;
+}
+
+.color3 {
+    background-color: #ccc5b9;
+}
+
+.pixel {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border: 1px black solid;
+    display: inline-block;
+}
+
+.pixel-board {
+    width: 250px;
+    height: 150px;
+}
