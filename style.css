@@ -1,0 +1,142 @@
+
+
+#board-size{
+    width: 50px;
+}
+#container-info-bar{
+ 
+    display: flex;           /* establish flex container */
+    margin-top: 10px;
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;     /* center items horizontally, in this case */
+    height: 30px;
+    
+}
+
+#box-info{
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+    width: 800px;
+     margin: 5px;
+    text-align: left;     /* will center text in <p>, which is not a flex item */
+    background: #2fc18c;
+    padding: 10px 10px 10px 10px;
+    color: white;
+}
+
+#button{
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+    width: 240px;
+    margin-top: 0.5%;
+    margin-bottom: 1%; 
+    text-align: center;     /* will center text in <p>, which is not a flex item */
+    background: #2fc18c;
+    padding: 10px 10px 10px 10px;
+    color: white;
+}
+
+
+
+.color{
+    border:1px solid black ;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+
+
+
+.model{
+    
+    align-items: center;     /* center items horizontally, in this case */
+    display: flex;           /* establish flex container */
+    flex-direction: column;  /* make main axis vertical */
+    width: 100%;
+    justify-content: center; /* center items vertically, in this case */
+   /* margin-top: 12%;*/
+
+  /* margin: 10% 10% 10% 10%;*/
+    
+}
+
+#container-button{
+    align-items: center;     /* center items horizontally, in this case */
+    display: flex;           /* establish flex container */
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+}
+.perfomace-palette{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+.pixel{
+    border:1px solid black ;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    
+}
+
+.selected{
+    border:1px solid black ;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: black;
+}
+
+.black{
+    border:1px solid black ;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: black;
+}
+
+.blue{
+    border:1px solid black ;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: blue;
+}
+.yellow{
+    border:1px solid black ;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: yellow;
+}
+
+.green{
+    border:1px solid black ;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: green;
+}
+
+.white{
+    border:1px solid black ;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: white;
+}
+
+ 
+h1{
+    text-align: center;
+
+}
+
+body{
+    text-align: center;
+}
