@@ -1,0 +1,83 @@
+/* Título */
+header {
+    text-align: center;
+  }
+  
+#title {
+  text-decoration: underline;
+  font-weight: 900;
+  background-color: yellow;
+  padding: 5px;
+}
+
+/* Paleta de Cores */
+#color-palette {
+  margin-bottom: 25px;
+}
+
+.color {
+  border: 1px solid black;
+  width: 58px;
+  height: 58px;
+  display: inline-block;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+/* Quadro de Pixels */
+main {
+  text-align: center;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid black;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#first-line {
+  margin-top: 3px;
+}
+
+#second-line {
+  margin-top: 3px;
+}
+
+#third-line {
+ margin-top: 3px;
+}
+
+#fourth-line {
+  margin-top: 3px;
+}
+
+#fifth-line {
+  margin-top: 3px;
+}
+
+/* Botão */
+#clear-board {
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  font-weight: 900;
+  font-size: 0.9em;
+  background-color: rgb(198, 161, 233);
+}
