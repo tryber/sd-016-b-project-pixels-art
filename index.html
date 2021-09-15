@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixels Art Project | Leandro Silva | Trybe | T16-B</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header-container">
+    <div id="title-container">
+      <h1 id="title">Paleta de Cores</h1>
+    </div>
+    <div id="nav-container">
+      <nav id="nav">
+        <!-- <a class="link" href="#namassa">Mão na massa</a> |  -->
+        <a class="link" href="https://leandrochs.github.io/" target="_blank">Portifólio</a> | 
+        <a class="link" href="https://www.betrybe.com/" target="_blank">Site Trybe</a>
+      </nav>
+    </div>
+  </header>
+    <!-- paleta  -->
+    <div id="color-palette-container">
+      <div id="color-palette">
+        <img class='color selected' id="initial-color" src="mascara-para-cores.png">
+        <img class='color' src="mascara-para-cores.png">
+        <img class='color' src="mascara-para-cores.png">
+        <img class='color' src="mascara-para-cores.png">
+    </div>
+    <div id="input-container" id="clear-board-container">
+      <button id="clear-board" type="reset" value="Reset">Limpar</button>
+      <input id="board-size" type="number" min="1" max="50" placeholder="Tamanhos entre 5 e 50">
+      <button id="generate-board" type="submit">VQV</button>
+    </div>
+    <div id="pixel-board-container">
+      <div id="pixel-board">
+        <div class="line">
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+        </div>
+        <div class="line">
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+        </div>
+        <div class="line">
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+        </div>
+        <div class="line">
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+        </div>
+        <div class="line">
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+          <div class="pixel"></div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <div id="phrase">
+        <a href="https://www.betrybe.com/" target="_blank">Jeito tryber de ser 🚀</a>
+      </div>
+      <div id="signature">
+        Feito por <i>Leandro Chagas da Silva</i> como requisito para aprovação no projeto 3 Pixels Art do curso de desenvolvimento web da <i>Trybe</i> | Turma 16 | Setembro de 2021.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
