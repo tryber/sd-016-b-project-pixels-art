@@ -1,0 +1,78 @@
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+  width: auto;
+}
+
+.board-pixel {
+  height: 72px;
+}
+
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 30px;
+}
+
+.black {
+  background-color: black;
+}
+
+.black:hover {
+  background-color: rgb(41, 37, 37);
+}
+
+#clear-board {
+  background-color: grey;
+  border: 1px solid black;
+  color: white;
+  display: inline-block;
+  font-family: sans-serif;
+  font-weight: 800;
+  margin: 10px 15px;
+  padding: 10px 20px;
+  text-align: center;
+  width: 50px;
+}
+
+#clear-board:hover {
+  background-color: darkslategray;
+  color: white;
+}
+
+#board-size {
+  border: 1px solid black;
+  color: black;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  margin: 10px 15px;
+  padding: 10px 20px;
+  text-align: center;
+  width: 250px;
+}
+
+#text-new-board {
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 17px;
+}
+
+#generate-board {
+  background-color: grey;
+  border: 1px solid black;
+  color: white;
+  display: inline-block;
+  font-family: sans-serif;
+  font-weight: 800;
+  margin: 10px 15px;
+  padding: 10px 20px;
+  text-align: center;
+  width: 50px;
+}
+
+#generate-board:hover {
+  background-color: darkslategray;
+  color: white;
+}
