@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="bt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Project Pixels Art</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body> 
+    <header>Pixels Art!</header>
+    <img id=img src="imagempixel.png">
+    <h1 id="title">Paleta de Cores</h1>
+    <section id="color-palette">
+      <div class="color" id="firstColor"></div>
+      <div class="color" id="secondColor"></div>
+      <div class="color" id="thirdColor"></div>
+      <div class="color" id="fourthColor"></div>
+    </section>
+    <section > 
+      <button id="clear-board" class="buttons">Limpar</button>
+    </section>
+    <section id="sizeBoard">
+      <input type="number" min="1" max="50" id="board-size" placeholder="Dimensão"> 
+      <button id="generate-board" class="bot">VQV</button>
+    </section>
+    <section id="pixel-board">
+      <div class="pixel-row"></div>
+      <div class="pixel-row"></div>
+      <div class="pixel-row"></div>
+      <div class="pixel-row"></div>
+      <div class="pixel-row"></div>
+    </section>
+    <footer id=ft>
+      <p id=creditos >Desenvolvido por Amanda Sottani Nascimento</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
