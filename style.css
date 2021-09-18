@@ -32,6 +32,20 @@ header h1 {
   height: 50px;
 }
 
+/* Fazer isso aqui pelo JS de algum jeito */
+.initial-color{
+  background-color: black;
+}
+.color-1 {
+  background-color: #DDE8B3;
+}
+.color-2 {
+  background-color: #63734A;
+}
+.color-3 {
+  background-color: #BFCC98;
+}
+
 .pixel {
   width: 40px;
   height: 40px;
