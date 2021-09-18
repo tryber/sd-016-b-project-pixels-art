@@ -96,3 +96,18 @@ botaoVQV.addEventListener('click', function() {
   matriz(input.value);
 
 });
+
+// Requisito 12: gera cores aleatórias
+function corAleatoria() {
+  const numeroUm = Math.round(Math.random() * 255);
+  const numeroDOis = Math.round(Math.random() * 255);
+  const numertoTres = Math.round(Math.random() * 255);
+
+  return `rgb(${numeroUm}, ${numeroDOis}, ${numertoTres})`;
+}
+
+const classCorAleatoria = document.getElementsByClassName('corAleatoria');
+
+for (let index = 0; index < classCorAleatoria.length; index += 1) {
+  classCorAleatoria[index].style.backgroundColor = corAleatoria();
+} 
