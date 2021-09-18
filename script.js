@@ -14,7 +14,7 @@ function generateColors() {
     if (colors.includes(color) === false) {
       colors.push(color);
     }
-  } while (colors.length < 4);
+  } while (colors.length < 16);
   return colors;
 }
 
@@ -29,11 +29,6 @@ function createSquare(colorIndex) {
   const palette = document.createElement('div');
   palette.style.backgroundColor = colors[colorIndex];
   palette.className = 'color';
-  palette.addEventListener('click', () => {
-    setSelectedColor(colors[colorIndex]);
-    resetSelected();
-    palette.className = 'color selected';
-  });
   if (colorIndex === 0) {
     palette.className = 'color selected';
   }
@@ -47,7 +42,30 @@ function createPalettes(size) {
   }
 };
 
+// quesito 3
+function createSquareboard() {
+  const squareBoard = document.createElement('div');
+  squareBoard.className = 'pixel';
+  return squareBoard;
+}
+
+function createRowBoard(size) {
+  const row = document.createElement('div');
+  for (let index = 0; index < size; index += 1) {
+    row.appendChild(createSquareboard());
+  }
+  return row;
+}
+
+function createBoard(boardSize) {
+  const mainBoard = document.getElementById('pixel-board');
+  for (let index = 0; index < boardSize; index += 1) {
+    mainBoard.appendChild(createRowBoard(boardSize));
+  }
+}
+
 function buildAll() {
   createPalettes(4);
+  createBoard(5);
 }
 buildAll();

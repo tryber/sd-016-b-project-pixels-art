@@ -1,8 +1,8 @@
 *{
     margin: 0;
 }
-#title{
 
+#title{
 
 }
 #color-palette{
@@ -13,4 +13,14 @@
     width: 50px;
     height: 50px;
     display: inline-block;
+}
+.pixel {
+    background-color: white;
+    border: black 1px solid;
+    width: 40px;
+    height: 40px;
+    display: table-cell;
+}
+#pixel-board {
+    margin-top: 30px;
 }
