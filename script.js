@@ -13,18 +13,21 @@ palette.addEventListener('click', (event) => {
   }
   event.target.classList.add('selected');
 });
-// ajudado por Hugo Daniel.
+// ajudado por Hugo Daniel
 
-for (let index = 0; index < pixelBoardArray.length; index += 1) {
-  pixelBoardArray[index].onclick = function (e) {
-    const selectedColor = document.querySelector('.selected');
-    const BGColorSelected = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
-    e.target.style.backgroundColor = BGColorSelected;
-  };
+function paint() {
+  for (let index = 0; index < pixelBoardArray.length; index += 1) {
+    pixelBoardArray[index].onclick = function (e) {
+      const selectedColor = document.querySelector('.selected');
+      const BGColorSelected = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
+      e.target.style.backgroundColor = BGColorSelected;
+    };
+  }
 }
+paint();
 
 const bigSection = document.createElement('section');
-bigSection.className = 'big session';
+bigSection.className = 'bigsession';
 document.body.appendChild(bigSection);
 bigSection.appendChild(palette);
 
@@ -71,6 +74,7 @@ function subMakeBoard() {
       newLine.appendChild(newPixel);
     }
   }
+  paint();
 }
 
 function makeBoard() {
