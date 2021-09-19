@@ -1,112 +1,86 @@
 const body = document.getElementsByTagName('body')[0];
-
-function pageTitle(string) {
-  const title = document.createElement('h1');
-  title.id = 'title';
-  title.innerText = string;
-  body.appendChild(title);
-}
-
-pageTitle('Paleta de Cores');
+const palette = document.getElementById('color-palette');
+const pixels = document.getElementById('pixel-board');
+const clearBtn = document.getElementById('clear-board');
+const resizeInput = document.getElementById('board-size');
+const resizeBtn = document.getElementById('generate-board');
 
 function createPalette(colors) {
-  const paletteList = document.createElement('div');
-  paletteList.id = 'color-palette';
+  const colorPalette = document.getElementById('color-palette');
 
   for (const color of colors) {
     const paletteColor = document.createElement('div');
     paletteColor.className = 'color';
     paletteColor.style.backgroundColor = color;
-    paletteList.appendChild(paletteColor);
+    colorPalette.appendChild(paletteColor);
   }
-
-  body.appendChild(paletteList);
 }
-
 createPalette(['red', 'blue', 'green']);
-const paletteList = document.getElementById('color-palette');
 
 function addPaletteColor(color) {
   const newColor = document.createElement('div');
   newColor.className = 'color';
   newColor.style.backgroundColor = color;
-  paletteList.prepend(newColor);
+  palette.prepend(newColor);
 }
-
 addPaletteColor('black');
 
-function addPixelBoard(height, width) {
-  const pixelBoard = document.createElement('div');
-  pixelBoard.id = 'pixel-board';
-  for (let i = 0; i < height; i += 1) {
-    const line = document.createElement('div');
-    for (let j = 0; j < width; j += 1) {
-      const paintingPixel = document.createElement('div');
-      paintingPixel.className = 'pixel';
-      line.appendChild(paintingPixel);
-    }
-    pixelBoard.appendChild(line);
+function addPixelBoard(size) {
+  if (pixels.children.length > 0) {
+    pixels.innerHTML = '';
   }
-  body.appendChild(pixelBoard);
-}
-
-addPixelBoard(5, 5);
-const pixelList = document.getElementById('pixel-board');
-
-function selectedColor(color) {
-  const colorList = document.getElementsByClassName('color');
-  for (const palette of colorList) {
-    if (palette.style.backgroundColor === color) {
-      palette.classList.add('selected');
+  for (let i = 0; i < size; i += 1) {
+    const newLine = document.createElement('div');
+    for (let j = 0; j < size; j += 1) {
+      const newPixel = document.createElement('div');
+      newPixel.className = 'pixel';
+      newPixel.style.backgroundColor = 'white';
+      newLine.appendChild(newPixel);
     }
+    pixels.appendChild(newLine);
   }
 }
+addPixelBoard(5);
 
+function selectedColor(selected) {
+  const colorList = palette.children;
+  for (const color of colorList) {
+    if (color.style.backgroundColor === selected) {
+      color.classList.add('selected');
+    } else {
+      color.classList.remove('selected');
+    }
+  }
+}
 selectedColor('black');
 
-function changeSelectedColor() {
-  const paletteColors = document.getElementsByClassName('color');
-  paletteList.addEventListener('click', (event) => {
-    const newSelectedColor = event.target.style.backgroundColor;
-    for (const color of paletteColors) {
-      if (color.classList.contains('selected') === true) {
-        if (color.style.backgroundColor !== newSelectedColor) {
-          color.classList.remove('selected');
-        }
-      } else {
-        if (color.style.backgroundColor === newSelectedColor) {
-          selectedColor(newSelectedColor);
-        }
-      }
-    }
-  });
+palette.addEventListener('click', changeSelectedColor);
+function changeSelectedColor(event) {
+  selectedColor(event.target.style.backgroundColor);
 }
 
-changeSelectedColor();
-
-function paintPixel() {
-  pixelList.addEventListener('click', (event) => {
-    const selected = document.querySelector('.selected');
-    event.target.style.backgroundColor = selected.style.backgroundColor;
-  });
+pixels.addEventListener('click', paintPixel);
+function paintPixel(event) {
+  const selected = document.querySelector('.selected');
+  event.target.style.backgroundColor = selected.style.backgroundColor;
 }
 
-paintPixel();
-
-function addClearButton() {
-  const clearButton = document.createElement('input');
-  clearButton.type = 'button';
-  clearButton.id = 'clear-board';
-  clearButton.innerText = 'Limpar';
-  clearButton.value = 'Limpar';
-  // Referência utilizada da função insertBefore: https://stackoverflow.com/questions/5882768/how-to-append-a-childnode-to-a-specific-position
-  body.insertBefore(clearButton, pixelList);
-  clearButton.addEventListener('click', () => {
-    const pixels = document.getElementsByClassName('pixel');
-    for (const pixel of pixels) {
-      pixel.style.backgroundColor = 'white';
-    }
-  });
+clearBtn.addEventListener('click', clearPixels);
+function clearPixels(event) {
+  const pixels = document.getElementsByClassName('pixel');
+  for (const pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
 }
 
-addClearButton();
+resizeBtn.addEventListener('click', changeBoardSize);
+function changeBoardSize() {
+  const sizeInput = parseInt(resizeInput.value);
+  const errorMessage = 'Board inválido!';
+  if (resizeInput.value === '' || sizeInput < 5 || sizeInput > 50) {
+    alert(errorMessage);
+  } else {
+    addPixelBoard(sizeInput);
+    resizeInput.value = '';
+  }
+}
