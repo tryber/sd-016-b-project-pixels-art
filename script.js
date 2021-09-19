@@ -5,17 +5,28 @@ const clearBtn = document.getElementById('clear-board');
 const resizeInput = document.getElementById('board-size');
 const resizeBtn = document.getElementById('generate-board');
 
+function randomColor(quantity) {
+  let arrayColors = [];
+  for (let i = 0; i < quantity; i += 1) {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    arrayColors.push(randomColor);
+  }
+  console.log(arrayColors);
+  return arrayColors;
+}
+
 function createPalette(colors) {
   const colorPalette = document.getElementById('color-palette');
 
   for (const color of colors) {
     const paletteColor = document.createElement('div');
     paletteColor.className = 'color';
-    paletteColor.style.backgroundColor = color;
+    paletteColor.style.backgroundColor = `#${color}`;
     colorPalette.appendChild(paletteColor);
   }
 }
-createPalette(['red', 'blue', 'green']);
+
+createPalette(randomColor(3));
 
 function addPaletteColor(color) {
   const newColor = document.createElement('div');
@@ -77,8 +88,15 @@ resizeBtn.addEventListener('click', changeBoardSize);
 function changeBoardSize() {
   const sizeInput = parseInt(resizeInput.value);
   const errorMessage = 'Board inválido!';
-  if (resizeInput.value === '' || sizeInput < 5 || sizeInput > 50) {
+
+  if (resizeInput.value === '') {
     alert(errorMessage);
+  } else if (sizeInput < 5) {
+    addPixelBoard(5);
+    resizeInput.value = '';
+  } else if (sizeInput > 50) {
+    addPixelBoard(50);
+    resizeInput.value = '';
   } else {
     addPixelBoard(sizeInput);
     resizeInput.value = '';
