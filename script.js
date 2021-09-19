@@ -14,13 +14,14 @@ function createColorPalete () {
 
 createColorPalete();
 
+
 function createPixelBoard() {
   let getPixelBoard = document.querySelector('#pixel-board');
   for (let i = 0; i < 5; i ++) {
     let SetPixelLineContainer = document.createElement('div');
     SetPixelLineContainer.classList.add('pixelContainer');
     getPixelBoard.appendChild(SetPixelLineContainer);
-
+    
     for (let i = 0; i < 5; i ++) {
       let setPixelLine = document.createElement('div');
       setPixelLine.classList.add('pixel');
@@ -52,11 +53,31 @@ function addSelect(event) {
   event.target.classList.add('selected');
 }
 
-for (let index = 0; index < getColors.length; index += 1) {
-  getColors[index].addEventListener('click', removeSelect);
-  getColors[index].addEventListener('click', addSelect);
+for (let i = 0; i < getColors.length; i += 1) {
+  getColors[i].addEventListener('click', removeSelect);
+  getColors[i].addEventListener('click', addSelect);
 }
+
+
+function SetPixelColor(event) {
+  if (event.target.classList.contains('pixel')) {
+    let getSelected = document.querySelector('.selected');
+    let getBckgcolor = window.getComputedStyle(getSelected).getPropertyValue('background-color');
+    event.target.style.backgroundColor = getBckgcolor;
+  }
+}
+document.addEventListener('click', SetPixelColor);
 //. 
-
-
-
+    
+    
+let butt = document.getElementById('clear-board');
+let pixel = document.querySelectorAll('.pixel');
+    
+function cleanButton() {
+  for (i = 0; i < pixel.length; i += 1){
+    pixel[i].style.backgroundColor = 'white';
+  }
+}
+    
+butt.addEventListener('click', cleanButton);
+    
