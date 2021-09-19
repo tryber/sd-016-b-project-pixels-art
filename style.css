@@ -6,7 +6,7 @@
 }
 
 .pixel-board {
-  display: inline-block;  
+  display: inline-block;
 }
 
 .pixel {
@@ -17,18 +17,18 @@
   background-color: white;
 }
 
-#cor1 {
+#corPreta {
   background-color: black;
 }
 
-#cor2 {
+#corRosa {
   background-color: #efcde4;
 }
 
-#cor3 {
+#corVerde {
   background-color: #cbe6b3;
 }
 
-#cor4 {
+#corAzul {
   background-color: #90d0e6;
 }
