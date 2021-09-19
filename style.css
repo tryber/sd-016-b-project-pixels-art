@@ -26,10 +26,19 @@
 
 .pixel {
     display: inline-block;
-    margin-right: 5px;
     height: 40px;
     width: 40px;
     border:black solid 1px;
     background-color: white;
     color: white;
+}
+
+#pixel-board {
+ width: 210px;
+}
+
+.palette-color {
+    display: flex;
+    flex-wrap:wrap;
+    
 }
