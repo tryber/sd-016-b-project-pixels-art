@@ -1,0 +1,31 @@
+#color-pallete {
+    display: inline-block;
+    
+}
+
+.color {
+    padding:initial;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+
+
+.pixelContainer {
+    display: inline-block;
+    
+    margin-left: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pixel {
+    padding:initial;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: white;
+    
+}
