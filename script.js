@@ -27,3 +27,14 @@ function setColor() {
 }
 
 setColor(); // executa a função de pintar o pixel.
+
+// Requisito 9
+const clearButton = document.querySelector('#clear-board'); // seleciona o id clear-bord e atribui a const.
+
+clearButton.addEventListener('click', () => { // atribui um escutador na funcao que ao clicar vai executar um for que atribui bkcolor white a toda minha classe pixel.
+  const pixel = document.querySelectorAll('.pixel');
+
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+});
