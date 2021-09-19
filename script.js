@@ -24,3 +24,15 @@ function paintingPixels() { // função criada para aplicar cor em todos os pixe
 }
 
 paintingPixels();
+
+function clearPixels() {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style = null;
+  }
+}
+
+const clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', clearPixels);
+
+// referência: https://stackoverflow.com/questions/18691655/remove-style-on-element
