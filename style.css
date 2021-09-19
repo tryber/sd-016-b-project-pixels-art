@@ -1,0 +1,58 @@
+body { background-image: url('https://vistapointe.net/images/a-clockwork-orange-wallpaper-18.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#title {font-family: Montserrat, sans-serif;
+  font-size: 100px;
+  color: rgb(208, 202, 176);
+  text-align: center;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;}
+
+#color-palette {position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 220px;
+  border: rgb(164, 106, 41) solid 2px;
+  border-radius: 5px;
+  background: rgb(164, 106, 41);
+}
+
+.color {border: solid black 1px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#pixel-board {
+  margin: 10px auto;
+  width: 200px; /** deixa a div centralizada pois delimita o tamanho da div **/
+  height: 200px; /** : 200px = 40*5 => tamanho*n. de pixels **/
+}
+
+.pixel { border: solid black 1px;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: -3px; /** retira os espaços entre os pixels **/
+}
+
+.style-editors {
+  margin: 10px auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+button { font-family: Montserrat, sans-serif;
+  font-size: larger;
+  border: solid black 2px;
+  border-radius: 5px;
+  width: 100px;
+  margin: 10px;
+}
