@@ -1,0 +1,38 @@
+.color {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+#pixel-board {
+  display: inline-block;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.clearButton {
+  margin-left: 80px;
+}
+
+#corPreta {
+  background-color: black;
+}
+
+#corRosa {
+  background-color: #efcde4;
+}
+
+#corVerde {
+  background-color: #cbe6b3;
+}
+
+#corAzul {
+  background-color: #90d0e6;
+}
