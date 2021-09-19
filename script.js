@@ -14,6 +14,7 @@ function changeSelected() {
 
 changeSelected();
 
+// requisito 8
 /* Nesse exercicio tive a ajuda do Hugo Daniel para resolver. */
 const pixelBoard = document.querySelector('#pixel-board');
 pixelBoard.addEventListener('click', (event) => {
@@ -26,12 +27,44 @@ pixelBoard.addEventListener('click', (event) => {
   }
 });
 
-function creationButton() {
-  const buttonCreate = document.getElementById('button-create');
-  const button = document.createElement('button');
-  button.id = 'clear-board';
-  button.innerText = 'Limpar';
-  buttonCreate.append(button);
+function createPixel(value) {
+  const createPixelBoard = document.getElementById('pixel-board');
+  createPixelBoard.innerHTML = '';
+  for (let line = 0; line < value; line += 1) {
+    const createLine = document.createElement('div');
+    createLine.id = 'line';
+    createPixelBoard.appendChild(createLine);
+    for (let column = 0; column < value; column += 1) {
+      const createColumn = document.createElement('div');
+      createColumn.className = 'pixel';
+      createLine.appendChild(createColumn);
+    }
+  }
+}
+
+createPixel();
+
+function adjustingSize() {
+  createPixel('5');
+  const buttonPixel = document.querySelector('#generate-board');
+  buttonPixel.addEventListener('click', () => {
+    const dice = document.querySelector('#board-size').value;
+    let valueSize = dice;
+    if (dice <= 0) {
+      window.alert('Board inválido!');
+    } else if (dice < 5) {
+      valueSize = 5;
+    } else if (dice > 50) {
+      valueSize = 50;
+    }createPixel(valueSize);
+  });
+}
+
+adjustingSize();
+
+// requisito 9
+function creationButtonClean() {
+  const button = document.querySelector('#clear-board');
   button.addEventListener('click', () => {
     const pixel = document.getElementsByClassName('pixel');
     for (let index = 0; index < pixel.length; index += 1) {
@@ -40,4 +73,20 @@ function creationButton() {
   });
 }
 
-creationButton();
+creationButtonClean();
+
+function createRgb() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return rgb = `rgb(${r}, ${g}, ${b})`;
+}
+
+function createNewColor() {
+  const newColor = document.querySelectorAll('.color');
+  for (let index = 1; index < newColor.length; index += 1) {
+    newColor[index].style.backgroundColor = createRgb();
+  }
+}
+
+createNewColor();

@@ -7,14 +7,8 @@ body {
   text-align: center;
 }
 
-section {
-  width: 210px;
-  margin: auto;
-  padding: 10px;
-}
-
 #title {
-  background-color: turquoise;
+  background-color: rgb(95, 124, 220);
   padding: 10px;
 }
 
@@ -44,8 +38,14 @@ section {
 }
 
 #pixel-board {
-  display: grid;
-  grid-template-columns: repeat(5, 0fr);
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+#generate-board {
+  margin-left: 1px;
+  margin-right: 10px;
 }
 
 .pixel {
