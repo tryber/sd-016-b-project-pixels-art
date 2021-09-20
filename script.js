@@ -22,7 +22,8 @@ function changeColor() {
 }
 
 function paintBoard() {
-
+  const selectedColor = document.querySelector('.selected');
+  this.style.backgroundColor = selectedColor.style.backgroundColor;
 }
 
 function createPaletteColor(n) {
@@ -37,6 +38,7 @@ function createPaletteColor(n) {
   for (let i2 = 0; i2 < colors.length; i2 += 1) {
     colorOfPalette[i2].style.backgroundColor = colors[i2];
   }
+  colorOfPalette[0].classList.add('selected');
   return colorPalette;
 }
 
