@@ -30,21 +30,23 @@ header h1 {
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  position: relative;
 }
 
-/* Fazer isso aqui pelo JS de algum jeito */
-.initial-color{
-  background-color: black;
+/* Selecionando atraves do atributo e nao somente pelo valor do atributo */
+[data-color="#000000"]{ 
+  background-color: #000000;
 }
-.color-1 {
+[data-color="#DDE8B3"]{
   background-color: #DDE8B3;
 }
-.color-2 {
+[data-color="#63734A"]{
   background-color: #63734A;
 }
-.color-3 {
+[data-color="#BFCC98"]{
   background-color: #BFCC98;
 }
+
 
 .pixel {
   width: 40px;
@@ -53,3 +55,6 @@ header h1 {
   border: 1px solid black;
 }
 
+.boardRow{
+  display: flex;
+}
