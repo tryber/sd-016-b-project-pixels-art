@@ -1,35 +1,57 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 header {
-  border: solid black 1px;
-  padding: 10px;
-  color: rgb(150, 169, 187);
+  color: rgb(2, 110, 211);
+  font-family: cursive;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(123, 191, 233);
 }
 
 main {
-  border: solid black 1px;
-  padding: 30px;
+  width: 100%;
 }
 
 .color {
-  border: solid black 1px;
-  display: inline-block;
-  height: 30px;
-  width: 30px;
+  border-radius: 30px;
+  display: flex;
+  height: 40px;
+  width: 40px;
+  justify-content: space-between;
 }
-/*requisito 2 */
+
+#color-palette {
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+}
+
+/* requisito 2  do black ao blue */
 #black {
   background-color: black;
+  border: solid black 1px;
 }
 
 #red {
   background-color: red;
+  border: solid black 1px;
 }
 
 #green {
   background-color: green;
+  border: solid black 1px;
 }
 
 #blue {
   background-color: blue;
+  border: solid black 1px;
 }
 
 #pixel-board {
@@ -48,4 +70,12 @@ main {
 .line {
   display: block;
   height: 40px;
+}
+
+#generate-board {
+color:rgb(2, 110, 211)
+}
+
+#clear-board {
+color: red;
 }
