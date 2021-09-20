@@ -1,7 +1,7 @@
 const BOARD_SIZE = 5;
 const COLORS = ['#000000', '#DDE8B3', '#63734A', '#BFCC98'];
-const INITIAL_COLOR = '#000000'
-let currentColor = INITIAL_COLOR
+const INITIAL_COLOR = '#000000';
+let currentColor = INITIAL_COLOR;
 
 const clearButton = document.querySelector('#clear-board')
 
