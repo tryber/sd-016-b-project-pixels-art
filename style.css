@@ -15,7 +15,7 @@ main {
   height: 30px;
   width: 30px;
 }
-
+/*requisito 2 */
 #black {
   background-color: black;
 }
@@ -36,7 +36,7 @@ main {
   display: block;
   padding: 30px;
 }
-
+/*requisito 5 */
 .pixel {
   background-color: white;
   border: solid black 1px;
