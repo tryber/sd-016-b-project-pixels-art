@@ -26,9 +26,3 @@ display: inline-block;}
 
 .selected{}
 
-#clear-board {
-    margin-bottom: 15px;
-    padding: 5px 10px;
-    font-weight: 900;
-    font-size: 0.9em;
-    background-color: black
