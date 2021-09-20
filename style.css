@@ -3,10 +3,10 @@
 }
 
 #title{
-
+    color: rgb(90, 26, 26);
 }
 #color-palette{
-
+    margin-top: 10px;
 }
 .color {
     border: black solid 1px;
@@ -24,3 +24,4 @@
 #pixel-board {
     margin-top: 30px;
 }
+
