@@ -20,9 +20,4 @@ criacoluna(L3)
 criacoluna(L4)
 criacoluna(L5)]
 
-<<<<<<< HEAD
 let selecionacor = 
-=======
-let selecionacor = 
-
->>>>>>> 65b89e02be9945cac7988fdf1f81abc81813f7cc
