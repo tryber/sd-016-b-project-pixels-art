@@ -6,7 +6,28 @@ let lines = document.querySelectorAll('.gridColumns');
 
 const pixelBoard = document.getElementById('pixel-board');
 
-const arrayColorsPalette = ['black', 'blue', 'red', 'green'];
+const arrayColorsPalette = ['black', 'color0', 'color1', 'color2'];
+
+// criando as cores aleatorias
+function generatorColor() {
+  const generateColor1 = Math.floor((Math.random() * 255) + 1);
+  const generateColor2 = Math.floor((Math.random() * 255) + 1);
+  const generateColor3 = Math.floor((Math.random() * 255) + 1);
+
+  const generateColor = `rgb(${generateColor1}, ${generateColor2}, ${generateColor3})`;
+
+  return generateColor;
+}
+
+function colorRamdon() {
+  for (let index = 0; index < 3; index += 1) {
+    const color = 'color';
+    const string = color + index;
+    console.log(document.getElementsByClassName(string)[0]);
+    document.getElementsByClassName(string)[0].style.backgroundColor = generatorColor();
+  }
+  document.getElementsByClassName('black')[0].style.backgroundColor = 'black';
+}
 
 // Criando as divs da paleta de cores
 function colorPalettesFormation(arrayColors) {
@@ -17,6 +38,7 @@ function colorPalettesFormation(arrayColors) {
     divColorPalette.className = arrayColors[index];
     divColorPalette.classList.add('color');
   }
+  colorRamdon();
 }
 
 // Criando as linhas do grid
@@ -56,17 +78,20 @@ function listenerPalette(event) {
 // Colocando cor no pixel clicado
 function listenerPixels(event) {
   const divPixelSelected = event.target;
-  const classSelectedColor = document.querySelector('.selected').classList[0];
-  divPixelSelected.setAttribute('class', 'pixel');
-  divPixelSelected.classList.add(classSelectedColor);
+  const classSelectedColor = document.querySelector('.selected').style.backgroundColor;
+  console.log(classSelectedColor);
+  divPixelSelected.style.backgroundColor = classSelectedColor;
+  // const classSelectedColor = document.querySelector('.selected').classList[0];
+  // divPixelSelected.setAttribute('class', 'pixel');
+  // divPixelSelected.classList.add(classSelectedColor);
 }
 
 // Criando o botão limpar tudo
 const btnReset = document.getElementById('clear-board');
 function reset() {
-  const pixels = document.getElementsByClassName('pixel');
+  const pixels = document.getElementsByClassName('backGroundSet');
   for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].className = ('pixel backGroundSet');
+    pixels[index].style.backgroundColor = 'white';
   }
 }
 

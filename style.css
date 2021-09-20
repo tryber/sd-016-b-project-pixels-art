@@ -5,20 +5,16 @@
   border: 1px solid black;
 }
 
-.green {
-  background-color: darkgreen;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.red {
+.color0 {
   background-color: red;
 }
 
-.gray {
-  background-color: gray;
+.color1 {
+  background-color: aqua;
+}
+
+.color2 {
+  background-color: green;
 }
 
 .black {
