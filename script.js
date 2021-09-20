@@ -35,7 +35,7 @@ function createPaletteColors() {
     const colorElement = document.createElement('div')
 
     colorElement.classList.add('color')
-    colorElement.setAttribute('data-color', color)
+    colorElement.setAttribute('data-color', color) //ideia do yt
     colorElement.onclick = handleSelectedColor
 
     colorPalette.appendChild(colorElement)
