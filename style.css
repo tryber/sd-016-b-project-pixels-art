@@ -18,7 +18,8 @@ padding: 20px;}
 #purple{background-color: purple;
 padding: 20px}
 
-#pixel-board{ width: 245px; height: 245px;}
+#pixel-board{ width: 245px; height: 245px;
+display: table-row;}
 
 .pixel{ border: 1px solid black ;
 width: 40px; height: 40px;
