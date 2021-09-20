@@ -19,11 +19,13 @@ padding: 20px;}
 padding: 20px}
 
 #pixel-board{ width: 245px; height: 245px;
-display: table-row;}
+display: table-row;
+display: inline-block;}
 
 .pixel{ border: 1px solid black ;
 width: 40px; height: 40px;
-display: inline-block;}
+display: inline-block;
+background-color: white;}
 
 .selected{}
 
