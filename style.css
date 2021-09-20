@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+body {
+  background-color: #bfc5a7;
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+display: flex;
+}
+
+header h1 {
+  justify-content: center;
+  align-items: center;
+}
+
+#color-palette{
+  display: flex;
+  gap: 2rem;
+  padding-top: 10px;
+}
+
+#color-palette .color{
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+/* Selecionando atraves do atributo e nao somente pelo valor do atributo */
+[data-color="#000000"]{ 
+  background-color: #000000;
+}
+[data-color="#DDE8B3"]{
+  background-color: #DDE8B3;
+}
+[data-color="#63734A"]{
+  background-color: #63734A;
+}
+[data-color="#BFCC98"]{
+  background-color: #BFCC98;
+}
+
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.boardRow{
+  display: flex;
+}
