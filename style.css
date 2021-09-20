@@ -29,17 +29,11 @@ body {
 }
 
 #color-palette {
-   padding: 15px 0;
-    text-align: left;
-    width: auto;
+  line-height: 0;
+  margin: 25px auto;
+  width: fit-content;
 }
 
-#pixel-board {
-    border: 1px solid black;
-    display: block;
-    margin: 25px auto;
-    width: fit-content;
-}
 .description {
   padding: 15px 0;
 }
@@ -51,6 +45,14 @@ p {
 
 .heading {
   padding: 50px 0;
+}
+
+#pixel-board {
+  border: 1px solid black;
+  height: 210px;
+  line-height: 0;
+  margin: 25px auto;
+  width: 210px;
 }
 
 #title {
