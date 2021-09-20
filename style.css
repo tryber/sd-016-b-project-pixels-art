@@ -1,0 +1,31 @@
+
+#title {}
+
+#color-palette{}
+
+.color{border: black solid 1px;
+display: inline-block;}
+
+#pink{background-color: pink;
+padding: 20px;}
+
+#brown{background-color: brown;
+padding: 20px;}
+
+#black{background-color: black;
+padding: 20px;}
+
+#purple{background-color: purple;
+padding: 20px}
+
+#pixel-board{ width: 245px; height: 245px;
+display: table-row;
+display: inline-block;}
+
+.pixel{ border: 1px solid black ;
+width: 40px; height: 40px;
+display: inline-block;
+background-color: white;}
+
+.selected{}
+
