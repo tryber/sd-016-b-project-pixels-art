@@ -26,6 +26,7 @@
 }
 
 .selected {
+  border-radius: 20%;
 }
 
 .gridColumns {

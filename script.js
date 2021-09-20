@@ -1,8 +1,10 @@
 const numberInput = document.getElementById('board-size');
 
-const numberGridColumnsAndLines = numberInput.value;
+let numberGridColumnsAndLines = 5;
 
 let lines = document.querySelectorAll('.gridColumns');
+
+const pixelBoard = document.getElementById('pixel-board');
 
 const arrayColorsPalette = ['black', 'blue', 'red', 'green'];
 
@@ -28,8 +30,7 @@ function gridLines(divLines) {
 
 // Criando divs do grid de pixels
 function gridFormation() {
-  const pixelBoard = document.getElementById('pixel-board');
-
+  // retirado daqui
   for (let index = 0; index < numberGridColumnsAndLines; index += 1) {
     const divGridColumns = document.createElement('div');
     pixelBoard.appendChild(divGridColumns);
@@ -69,7 +70,32 @@ function reset() {
   }
 }
 
+// mostra um alert caso nenhum valor seja inserido
+function alertBoard(number) {
+  if (number === '') {
+    alert('Board inválido!');
+    numberGridColumnsAndLines = 5;
+  }
+}
+
+// manter os valores maximos e minimos
+function maxMin(number) {
+  if (number < 5) {
+    numberGridColumnsAndLines = 5;
+  } if (number > 50) {
+    numberGridColumnsAndLines = 50;
+  }
+}
+
 // Apaga as divs dos pixels criados por default
+const btnVqv = document.getElementById('generate-board');
+function deleteDivs() {
+  numberGridColumnsAndLines = numberInput.value;
+  alertBoard(numberGridColumnsAndLines);
+  maxMin(numberGridColumnsAndLines);
+  pixelBoard.innerText = '';
+  gridFormation();
+}
 
 window.onload = function () {
   colorPalettesFormation(arrayColorsPalette);
@@ -87,4 +113,6 @@ window.onload = function () {
   clickPixels.addEventListener('click', listenerPixels);
 
   btnReset.addEventListener('click', reset);
+
+  btnVqv.addEventListener('click', deleteDivs);
 };
