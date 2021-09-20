@@ -18,8 +18,17 @@ padding: 20px;}
 #purple{background-color: purple;
 padding: 20px}
 
-#pixel-board{}
+#pixel-board{border: 1px solid black; width: 220px; height: 230px;}
 
-.pixel{border: 1px solid black ;
+.pixel{ border: 1px solid black ;
 width: 40px; height: 40px;
 display: inline-block;}
+
+.selected{}
+
+#clear-board {
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    font-weight: 900;
+    font-size: 0.9em;
+    background-color: black
