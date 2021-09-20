@@ -17,8 +17,17 @@ padding: 20px;}
 #purple{background-color: purple;
 padding: 20px}
 
+<<<<<<< HEAD
 #pixel-board{}
 
 .pixel{border: 1px solid black ;
 width: 40px; height: 40px;
 display: inline-block;}
+=======
+#pixel-board
+
+.pixel{border: 1px solid black ;
+width: 40px; height: 40px;
+display: inline-block;}
+
+>>>>>>> 65b89e02be9945cac7988fdf1f81abc81813f7cc
