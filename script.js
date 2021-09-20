@@ -19,7 +19,9 @@ function botaoVQV() {
 let vqv = document.querySelector('#generate-board');
 // vqv.addEventListener('click', function(){
 
-const linhasColunas = vqv.addEventListener('click', botaoVQV);
+// const linhasColunas = vqv.addEventListener('click', botaoVQV);
+const linhasColunas = 5;
+
 const arrayCores = ['black', 'red', 'blue', 'green'];
 
 
