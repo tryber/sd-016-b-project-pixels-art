@@ -1,0 +1,44 @@
+.color {
+    display: inline-block;
+    margin-right: 15px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border:black solid 1px;
+}
+
+#black {
+    background-color:black;
+    color: white;
+}
+
+#red {
+    background-color:red;
+}
+
+#yellow {
+    background-color:yellow;
+}
+
+#purple {
+    background-color:purple;
+}
+
+.pixel {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border:black solid 1px;
+    background-color: white;
+    color: white;
+}
+
+#pixel-board {
+ width: 210px;
+}
+
+.palette-color {
+    display: flex;
+    flex-wrap:wrap;
+    
+}
