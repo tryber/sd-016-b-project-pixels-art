@@ -6,9 +6,22 @@ window.onload = function () {
   let select = document.querySelector('.black');
   select.className = 'color black selected';
 };
+// função Botão VQV
+function botaoVQV() {
+  let inputVqv = document.querySelector('#board-size');
+  let numeroPixels = inputVqv.value;
+  if (numeroPixels.length == 0) {
+    numeroPixels.value = 5;
+  }
+  console.log(numeroPixels);
+  return numeroPixels;
+}
+let vqv = document.querySelector('#generate-board');
+// vqv.addEventListener('click', function(){
 
+const linhasColunas = vqv.addEventListener('click', botaoVQV);
 const arrayCores = ['black', 'red', 'blue', 'green'];
-const linhasColunas = 5;
+
 
 // Criando as divs da paleta
 for (let index = 0; index < arrayCores.length; index += 1) {
@@ -130,3 +143,11 @@ function limparPixels () {
 
 let botao = document.querySelector('#clear-board');
 botao.addEventListener('click', limparPixels);
+
+
+// let vqv = document.querySelector('#generate-board');
+// vqv.addEventListener('click', function(){
+//   let inputVqv = document.querySelector('#board-size');
+//   let numeroPixels = inputVqv.value;
+//   console.log(numeroPixels);
+// });
