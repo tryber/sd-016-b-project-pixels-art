@@ -127,6 +127,12 @@ body.insertBefore(generateButton, pixelsBoard);
 function getInputValue(event) {
   // ref: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/parseInt
   pixelsBoardSize = parseInt(event.target.value, 10);
+  if (pixelsBoardSize < 5) {
+    pixelsBoardSize = 5;
+  }
+  if (pixelsBoardSize > 50) {
+    pixelsBoardSize = 50;
+  }
 }
 
 input.addEventListener('keyup', getInputValue);
