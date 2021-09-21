@@ -1,6 +1,5 @@
-const selecionado = document.querySelectorAll(".selected");
-const cor = document.querySelectorAll(".color");
-const paleta = document.getElementById("color-palette");
+const cor = document.querySelectorAll('.color');
+const paleta = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
 const btn = document.getElementById('clear-board');
 
@@ -17,19 +16,17 @@ function corSelecionada(event) {
 paleta.addEventListener('click', corSelecionada)
 
 // PARTE 8 
-// O PIXEL TERÁ QUE RECEBER A CLASSE SELECTED COM A PROPRIEDADE DA CLASSE COLOR
-// QUAL É A CLASSE O PIXEL-BOARD? .PIXEL
 function selecionaCor(event) {
-  let pixel = document.querySelector('.selected'); // resgatando a classe que eu vou usar
-  pixel.classList.remove("selected"); // removo a classe para não duplicar
-  event.target.classList.add("selected"); // adiciona a classe ao clickar nela.
+  const pixel = document.querySelector('.selected'); // resgatando a classe que eu vou usar
+  pixel.classList.remove('selected'); // removo a classe para não duplicar
+  event.target.classList.add('selected'); // adiciona a classe ao clickar nela.
 
 }
 paleta.addEventListener('click', selecionaCor) // chamo a função.
 
 function preenchePixelBoard(event) {
-  let pixel = document.querySelector('.selected'); // resgato a classe que eu vou usar
-  let pixelStyle = getComputedStyle(pixel).backgroundColor; // variavel para resgatar o style da classe + backgroundColor
+  const pixel = document.querySelector('.selected'); // resgato a classe que eu vou usar
+  const pixelStyle = getComputedStyle(pixel).backgroundColor; // variavel para resgatar o style da classe + backgroundColor
   event.target.style.backgroundColor = pixelStyle // event.target para definir a cor de fundo que foi selecionada
 }
 pixelBoard.addEventListener('click', preenchePixelBoard) // chamo a função novamente.
@@ -41,9 +38,9 @@ pixelBoard.addEventListener('click', preenchePixelBoard) // chamo a função nov
 // event de remover todas as classes do pixel-board
 
 function btnClear() {
-  let pixel = document.querySelectorAll('.pixel');
-  for (let index = 0; index < pixel.length; index+=1) {
-      pixel[index].style.backgroundColor = 'white';
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
   }
 }
 btn.addEventListener('click', btnClear)
