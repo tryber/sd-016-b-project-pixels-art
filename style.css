@@ -36,9 +36,5 @@
 
 #clear-board {
   border-radius: 5px;
-  padding: 4px 4px;
-}
-
-#clear-board {
-    background-color: white;
+  padding: 4px;
 }
