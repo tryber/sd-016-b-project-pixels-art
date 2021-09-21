@@ -36,3 +36,24 @@
 #header{
     text-align: center;
 }
+
+.pixel{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+
+}
+
+#pixel-board{
+    max-width: 12%;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+    display:flex;
+}
+
+.conteiner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
