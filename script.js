@@ -70,4 +70,12 @@ selectedPaint();
   }
 });
  
+  // Requisito 9
+  const buttonClear = document.getElementById('clear-board');
+  const pixels = document.getElementsByClassName('pixel');
+  buttonClear.addEventListener('click', () => {
+    for (let i = 0; i < pixels.length; i += 1) {
+      pixels[i].style.backgroundColor = 'white';
+    }
+  });
  
