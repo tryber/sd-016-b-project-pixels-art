@@ -8,6 +8,20 @@ colorPalette.children[3].style.backgroundColor = 'blue';
 
 colorPalette.children[0].setAttribute('class', 'color selected');
 
+// function clearBoard() {
+//   for (let i = 0; i < 25; i += 1) {
+//     document.querySelector('#pixel-board').children[i].style.backgroundColor = 'white';
+//   }
+// }
+// Requisito 9
+const createButton = document.createElement('button');
+mainTag.appendChild(createButton);
+createButton.setAttribute('id', 'clear-board');
+createButton.innerText = 'Limpar';
+
+// const button = document.getElementsByClassName('clear-board')[0];
+// button.addEventListener('click', clearBoard);
+
 // Requisito 4
 const createUl = document.createElement('ul');
 mainTag.appendChild(createUl);
