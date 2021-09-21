@@ -35,21 +35,33 @@ function listColor() {
 }
 
 // Requisito 4
+const createUl = document.createElement('ul');
+mainTag.appendChild(createUl);
+createUl.setAttribute('id', 'pixel-board');
+const pixelsBoard = document.getElementById('pixel-board');
 function pixelBoard() {
-  const createUl = document.createElement('ul');
-  mainTag.appendChild(createUl);
-  createUl.setAttribute('id', 'pixel-board');
   for (let i = 1; i <= 25; i += 1) {
     const createLi = document.createElement('li');
-    document.getElementById('pixel-board').appendChild(createLi);
+    pixelsBoard.appendChild(createLi);
     createLi.setAttribute('class', 'pixel');
   }
+}
+
+function colorPaint(color) {
+  const colored = document.querySelector('.selected').style.backgroundColor;
+  const coloredPaint = color.target;
+  if (color.target.className === 'pixel') {
+    coloredPaint.style.backgroundColor = colored;
+  }
+}
+function pixelsPaint() {
+  pixelsBoard.addEventListener('click', colorPaint);
 }
 
 // Requisito 9
 function clear() {
   for (let i = 0; i < 25; i += 1) {
-    document.getElementsByClassName('pixel')[i].setAttribute('id', '');
+    document.getElementsByClassName('pixel')[i].style.backgroundColor = 'white';
   }
 }
 function clearBoard() {
@@ -58,6 +70,7 @@ function clearBoard() {
 }
 
 window.onload = function init() {
+  pixelsPaint();
   createColor();
   listColor();
   pixelBoard();
