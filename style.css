@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(239, 241, 243);
+  font-family: Stick No Bills, sans-serif;
+}
+
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0 10px;
+  width: 30px;
+  height: 30px;
+}
+
+#title {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#color-palette {
+  width: fit-content;
+  margin: 30px auto;
+}
+
+button , input {
+  padding: 3px;
+}
+
+#clear-board {
+  display: block;
+  margin: 10px auto;
+}
+
+#generate-board {
+  margin: 0 5px;
+}
+
+#board-control {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#pixel-board {
+  width: fit-content;
+  margin: 40px auto;
+}
+
+.board-line {
+
+  /*
+  Consultei repositório 'tryber' para retirar o espaço entre as pixels do quadro
+  ref: https://github.com/tryber/exercise-end-block5
+  */
+  height: 40px;
+}
+
+.pixel {
+  display: inline-block;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+}
