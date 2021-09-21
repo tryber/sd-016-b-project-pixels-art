@@ -2,21 +2,26 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project Pixels Art</title>
-<link rel="stylesheet" type="text/css" href="style.css"> 
+<link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 <header>
 <h1 id="title">Paleta de Cores</h1>
 </header>
 <div id="color-palette">
-<div id="black" class="color"></div>
-<div id="red" class="color"></div>
-<div id="blue" class="color"></div>
-<div id="purple" class="color"></div>
+    <!-- mudança de div para button para facilitar a ativação das cores -->
+<button id="black" class="color"></button>
+<button id="red" class="color"></button>
+<button id="blue" class="color"></button>
+<button id="purple" class="color"></button>
 </div>
+<section><button class="clear-button" id="clear-board">Limpar</button></section>
+<section>
 <div id="pixel-board"></div>
+</section>
 <script src="script.js"></script>
 </body>
 </html>
