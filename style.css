@@ -26,9 +26,9 @@
   background-color: white;
 }
 
+/* ref: https://github.com/tryber/exercise-end-block5 */
 .board-line {
-  margin: 0;
-  padding: 0;
+  height: 40px;
 }
 
 .pixel {
