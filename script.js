@@ -21,11 +21,23 @@ for (let index = 0; index < numberOfColors; index += 1) {
 }
 
 const colorList = document.getElementsByClassName('color');
+
+function generateNumber() {
+  // ref: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+  const randomNumber = (255 * Math.random());
+  const roundNumber = Math.round(randomNumber);
+  return roundNumber;
+}
+
+const color1 = `rgb(${generateNumber()},${generateNumber()},${generateNumber()})`;
+const color2 = `rgb(${generateNumber()},${generateNumber()},${generateNumber()})`;
+const color3 = `rgb(${generateNumber()},${generateNumber()},${generateNumber()})`;
+
 // ref: https://www.w3schools.com/jsref/prop_element_classlist.asp
-colorList[0].classList.add('black');
-colorList[1].classList.add('pink');
-colorList[2].classList.add('yellow');
-colorList[3].classList.add('green');
+colorList[0].style.backgroundColor = 'black';
+colorList[1].style.backgroundColor = color1;
+colorList[2].style.backgroundColor = color2;
+colorList[3].style.backgroundColor = color3;
 
 // Requisitos 4 e 5
 const pixelsBoard = document.createElement('div');
@@ -38,18 +50,19 @@ function getSelectedColor() {
   for (let index = 0; index < colorList.length; index += 1) {
     // ref: https://www.w3schools.com/jsref/prop_element_classlist.asp
     if (colorList[index].classList.contains('selected')) {
-      return colorList[index].classList.item(1);
+      return colorList[index].style.backgroundColor;
     }
   }
 }
 
 function paintPixels(event) {
-  const colorClass = getSelectedColor();
+  const selectedColor = getSelectedColor();
+  const element = event.target;
   // ref: https://www.w3schools.com/jsref/prop_element_classlist.asp
-  if (!event.target.classList.contains(colorClass)) {
-    event.target.classList.remove('white');
-    event.target.classList.remove(event.target.classList.item(1));
-    event.target.classList.add(colorClass);
+  if (element.style.backgroundColor !== selectedColor) {
+    element.style.backgroundColor = 'white';
+    element.style.backgroundColor = selectedColor;
+    // event.target.classList.add(selectedColor);
   }
 }
 
@@ -63,7 +76,8 @@ function pixelsGenerator(sizeNumber) {
     for (let column = 0; column < sizeNumber; column += 1) {
       const pixelColumn = document.createElement('div');
       // ref: https://www.w3schools.com/jsref/prop_element_classlist.asp
-      pixelColumn.classList.add('pixel', 'white');
+      pixelColumn.classList.add('pixel');
+      pixelColumn.style.backgroundColor = 'white';
       pixelLine.appendChild(pixelColumn);
       pixelColumn.addEventListener('click', paintPixels);
     }
@@ -103,8 +117,8 @@ body.insertBefore(clearButton, pixelsBoard);
 function clearPixelsBoard() {
   for (let index = 0; index < pixels.length; index += 1) {
     // ref: https://www.w3schools.com/jsref/prop_element_classlist.asp
-    pixels[index].classList.remove(pixels[index].classList.item(1));
-    pixels[index].classList.add('white');
+    // pixels[index].classList.remove(pixels[index].classList.item(1));
+    pixels[index].style.backgroundColor = 'white';
   }
 }
 
