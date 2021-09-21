@@ -1,3 +1,5 @@
+// Referência: Grupo de estudos com (Hugo Daniel - Turma 16B e Airton Silva - Turma 16B).
+// Devido a problemas pessoais ocorridos no decorrer do projeto, obtive ajuda do grupo de estudos para inicio e conclusão do projeto.
 const colorPalette = document.getElementById('color-palette');
 function createColors() {
   const colors = ['black', 'red', 'blue', 'green'];
