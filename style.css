@@ -1,0 +1,38 @@
+#color1{
+  width: 40px;
+  height: 40px;  
+  background-color: black;
+  border: 1px solid black;
+}
+
+#color2{
+  width: 40px;
+  height: 40px; 
+  background-color: red;
+  border: 1px solid black;
+}
+
+#color3{
+  width: 40px;
+  height: 40px; 
+  background-color: green;
+  border: 1px solid black;
+}
+
+#color4{
+  width: 40px;
+  height: 40px; 
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+#color-palette{
+    margin-top: 30px;
+    border-radius: 4px;
+    justify-content: center;
+    display: flex;
+}
+
+#header{
+    text-align: center;
+}
