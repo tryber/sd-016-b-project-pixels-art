@@ -1,0 +1,212 @@
+/* RESET CSS */
+html,
+body,
+div,
+span,
+figure,
+figcaption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ol,
+ul,
+li,
+header,
+main,
+article,
+footer,
+section,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  line-height: 1;
+}
+
+/* TAG */
+html {
+  background: rgb(0, 43, 21);
+  background: linear-gradient(180deg, rgba(0, 43, 21, 1) 2%, rgba(0, 139, 11, 1) 35%, rgba(255, 255, 255, 1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body {
+  padding: 30px;
+}
+
+main {
+  align-items: center;
+  background-image: url(/img/old-paper.jpg);
+  border: outset;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-height: 900px;
+  max-width: 900px;
+  padding: 10px;
+
+}
+
+h1 {
+  color: var(--white);
+  font-size: 24pt;
+  text-align: center;
+  text-shadow: 2px 2px var(--black);
+}
+
+label {
+  text-align: center;
+  margin: 10px;
+}
+
+footer {
+  margin: 10px;
+}
+
+/* ID */
+/* consultaod site http://www.codigoti.com.br/2018/10/css-hover-efeitos-de-transicoes-ao.html */
+#color0,
+#color1,
+#color2,
+#color3 {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+/* consultaod site http://www.codigoti.com.br/2018/10/css-hover-efeitos-de-transicoes-ao.html */
+#color0:hover,
+#color1:hover,
+#color2:hover,
+#color3:hover {
+  box-shadow: none;
+  filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+  -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+}
+
+#color-palette {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  margin: 10px;
+}
+
+#create-button {
+  display: flex;
+  flex-direction: row;
+}
+
+#header-pixel-art {
+  margin: 15px;
+}
+
+#board {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  margin: 20px;  
+  max-height: 800px;
+  max-width: 800px;
+}
+
+#board-size{
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+  padding: 10px;
+  width: 75px;
+}
+#palette {}
+
+#pixel-board {
+  border: outset;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  overflow: scroll;
+  max-height: 600px;
+  max-width: 600px;
+}
+
+#project-name {
+  color: rgb(245, 245, 245);
+  font-family: 'Caveat Brush', cursive;
+  font-size: 32pt;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+}
+
+#title {
+  color: rgb(245, 245, 245);
+  font-family: 'Caveat Brush', cursive;
+  font-size: 22pt;
+  margin-top: 50px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+}
+
+#tools-title {
+  color: rgb(245, 245, 245);
+  font-family: 'Caveat Brush', cursive;
+  font-size: 22pt;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+}
+
+#tools-bar {
+  display: flex;
+  justify-content: center;
+}
+
+/* CLASS */
+.select,
+.color {
+  border: 1px rgb(0, 0, 0) solid;
+  border-radius: 50%;
+  height: 40px;
+  margin: 5px;
+  width: 40px;
+}
+
+.pixel {
+  border: rgb(0, 0, 0) solid 1px;
+  border-radius: 1px;
+  background-color: rgb(255, 255, 255);
+  height: 40px;
+  width: 40px;
+}
+
+.pixelColum {
+  display: flex;
+}
+
+.tool-botton {
+  border: outset;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font-family: 'Caveat Brush', cursive;;
+  font-size: 12pt;
+  height: 30px;
+  margin: 10px;
+  transition: all 1ms;
+  width: 75px;
+}
+
+.tool-botton:hover {
+  transform: scale(.95);
+  -webkit-transform: scale(0.9);
+}
