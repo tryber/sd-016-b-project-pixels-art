@@ -7,76 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Projeto Pixels Art</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <h1 id="project-title">Pixels Art</h1>
-    </header>
-    <figure id="logo">
-        <img id="logo-tybe" src="/img/2020-12-07_13-18_logo.png" alt="logo-trybe">
-        <figcaption id="logo-text">@Trybe</figcaption>
-    </figure>
-    <main>
+    <header id="header-pixel-art">
+        <h1 id="project-name">Pixel Art</h1>
+        <h1 id="title">Paleta de Cores</h1>
         <!-- Paleta de Cores -->
-        <section id="pixel-grid">
-            <section id="palette">
-                <h1 id="title">Paleta de Cores</h1>
-                <div id="color-palette">
-                    <div id="color1" class="color selected"></div>
-                    <div id="color2" class="color"></div>
-                    <div id="color3" class="color"></div>
-                    <div id="color4" class="color"></div>
+    </header>
+    <main>
+        <!-- Ferramentas -->
+        <section id="tools">
+            <h1 id="tools-title">Ferramentas de Desenho</h1>
+            <div id="tools-bar">
+                <div id="clear-button">
+                    <button id="clear-board" class="tool-botton">Limpar</button>
                 </div>
-            </section>
-            <aside id="indice">
-                <!-- Ferramentas -->
-                <section id="tools">
-                    <h1 id="tools-titlle">Ferramentas de Desenho</h1>
-                    <div id="tools-bar">
-                        <div id="clear-button">
-                            <label for="">Limpar Dezenho</label>
-                            <button id="clear-board" class="tool-botton">Limpar</button>
-                        </div>
-                        <div id="create-button">
-                            <label for="">Tabela<button id="generate-board" class="tool-botton">Criar
-                                    VQV</button></label>
-                            <input id="board-size" class="grid-size" type="number" min="1" max="5" placeholder="Linhas">
-                            <input id="size-colum" class="grid-size" type="number" min="1" max="5"
-                                placeholder="Colunas">
-                        </div>
-                    </div>
-                </section>
-            </aside>
-            <!-- Tabela de Pixel -->
-            <section id="pixel-board">
-            </section>
+                <div id="create-button">
+                    <input id="board-size" class="grid-size" type="number" min="1" max="50" placeholder="Tamanho">
+                    <button id="generate-board" class="tool-botton">#VQV
+                    </button>
+                </div>
+        </section>
+        <!-- Tabela de Pixel -->
+        <section id="board">
+
         </section>
     </main>
-    <footer>
-        <section id="credits">
-            <nav id="credits-links">
-                <ul id="links-list">
-                    <li class="list-item"><a target="_blank" class="list-item-link"
-                            href="https://www.instagram.com/dev.codding/">
-                            <img class="icon" src="/icon/circle-instagram.png" alt="Instagram"> Instagram</a></li>
-                    <li class="list-item"><a target="_blank" class="list-item-link"
-                            href="https://www.linkedin.com/in/lucas-camargo-80a015190/"> <img class="icon"
-                                src="/icon/circle-linkedin_.png" alt="Instagram">Linkedin</a>
-                    </li>
-                    <li class="list-item"><a target="_blank" class="list-item-link"
-                            href="https://github.com/lbcamargo94"> <img class="icon" src="/icon/circle-github.png"
-                                alt="Instagram">Github</a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-        <section id="copyright">
-            <div class="content">
-                <p id="text-copyright">© 2021, Trybe, Inc. All Rights Reserved.</p>
-            </div>
-        </section>
-    </footer>
     <script src="script.js"></script>
 </body>
 
