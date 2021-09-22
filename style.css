@@ -54,7 +54,18 @@
 }
 
 .conteiner{
+    margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.selected{
+    box-shadow: 2px 2px 2px gray;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
