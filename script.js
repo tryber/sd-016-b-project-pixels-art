@@ -1,9 +1,43 @@
 window.onload = function() {
   
+    /*function geraPixel() {
+      let input = document.getElementById('board-size').value
+      let fatherBoard = document.getElementsByClassName('conteiner')[1]
+      let criaDiv = document.createElement('div')
+      criaDiv.id('pixel-board')
+      fatherBoard.appendChild(criaDiv)
+      for(let col = 0; col < input; col++) {
+        for(let linha = 0; linha < input; linha ++) {
+          let criaPixel = document.createElement('button')
+          criaDiv.appendChild(criaPixel)
+        }
+        
+      }
+    }*/
+
+    function randomColor() {
+      let arryColor = []
+
+      for(let i = 0; i < 3; i++) {
+        arryColor.push(Math.round(Math.random() * 255))
+      }
+      let randomColor = `rgb(${arryColor[0]}, ${arryColor[1]}, ${arryColor[2]})`
+      return randomColor
+    }
+
+    function removePixel() {
+      let fatherBoard = document.getElementsByClassName('conteiner')[1]
+      let pixelBoard = document.getElementById('pixel-board')
+      fatherBoard.removeChild(pixelBoard)
+      geraPixel()
+    }
+
     function alertInvalido() {
       let input = document.getElementById('board-size').value
       if(input == ''){
         alert('Board inválido!')
+      }else{
+        removePixel()
       }
 
     }  
@@ -17,9 +51,9 @@ window.onload = function() {
 
     function pintaQuadro() {
       document.getElementById('color1').style.backgroundColor = 'black'
-      document.getElementById('color2').style.backgroundColor = 'red'
-      document.getElementById('color3').style.backgroundColor = 'green'
-      document.getElementById('color4').style.backgroundColor = 'yellow'
+      document.getElementById('color2').style.backgroundColor = randomColor()
+      document.getElementById('color3').style.backgroundColor = randomColor()
+      document.getElementById('color4').style.backgroundColor = randomColor()
       }
 
 
