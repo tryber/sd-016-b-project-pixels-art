@@ -1,5 +1,20 @@
 window.onload = function() {
-   
+  
+    function alertInvalido() {
+      let input = document.getElementById('board-size').value
+      if(input == ''){
+        alert('Board inválido!')
+      }
+
+    }  
+
+    function boardIvalido(){
+      let btn = document.getElementById('generate-board')
+      btn.addEventListener('click',alertInvalido)
+    }
+
+    boardIvalido();
+
     function pintaQuadro() {
       document.getElementById('color1').style.backgroundColor = 'black'
       document.getElementById('color2').style.backgroundColor = 'red'
