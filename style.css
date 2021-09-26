@@ -23,6 +23,7 @@ main {
   padding: 1px;
   border: solid teal 0.6px;
   border-radius: 4px;
+  width: 163px;
 }
 
 .footer {
