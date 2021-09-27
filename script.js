@@ -25,11 +25,30 @@ window.onload = function() {
       return randomColor
     }
 
-    function removePixel() {
+    function removePixel() { 
       let fatherBoard = document.getElementsByClassName('conteiner')[1]
+      let pixelBoard = document.getElementsByClassName('pixel')
+      for(let i = pixelBoard.length-1; i >= 0; i--) {
+        pixelBoard[i].remove()
+      }
+    }
+
+    function geraPixel() {
       let pixelBoard = document.getElementById('pixel-board')
-      fatherBoard.removeChild(pixelBoard)
-      geraPixel()
+      let inputNumber = document.getElementById('board-size').value
+      for (let i = 0; i < inputNumber; i++) {
+         let criaButton = document.createElement('button')
+         criaButton.classList.add('pixel')
+         criaButton.style.backgroundColor = 'white'
+        for(let x = 0; x < inputNumber; x++) {
+          let criaButton = document.createElement('button')
+          criaButton.classList.add('pixel')
+          criaButton.style.backgroundColor = 'white'
+          pixelBoard.appendChild(criaButton)
+        }
+
+      }
+
     }
 
     function alertInvalido() {
@@ -38,9 +57,10 @@ window.onload = function() {
         alert('Board inválido!')
       }else{
         removePixel()
+        geraPixel()
       }
 
-    }  
+    }
 
     function boardIvalido(){
       let btn = document.getElementById('generate-board')
