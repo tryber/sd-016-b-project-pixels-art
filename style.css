@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+}
+
+#title {
+  background-color: rgb(95, 124, 220);
+  padding: 10px;
+}
+
+.color {
+  border: 1px solid black;
+  border-radius: 100%;
+  display: inline-block;
+  height: 75px;
+  width: 75px;
+  margin: 15px;
+}
+
+#colorBlack {
+  background-color: black;
+}
+
+#colorBlue {
+  background-color: blue;
+}
+
+#colorRed {
+  background-color: red;
+}
+
+#colorGreen {
+  background-color: green;
+}
+
+#pixel-board {
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.pixelLine {
+  display: flex;
+  justify-content: center;
+}
+
+#generate-board {
+  margin-left: 1px;
+  margin-right: 10px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  height: 40px;
+  width: 40px;
+}
+
