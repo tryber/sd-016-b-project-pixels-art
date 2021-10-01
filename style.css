@@ -35,22 +35,18 @@ main {
 
 /* requisito 2  do black ao blue */
 #black {
-  background-color: black;
   border: solid black 1px;
 }
 
-#red {
-  background-color: red;
+#corRandon1 {
   border: solid black 1px;
 }
 
-#green {
-  background-color: green;
+#corRandon2 {
   border: solid black 1px;
 }
 
-#blue {
-  background-color: blue;
+#corRandon3 {
   border: solid black 1px;
 }
 
