@@ -16,13 +16,14 @@ changeSelected();
 
 // requisito 8
 /* Nesse exercicio tive a ajuda do Hugo Daniel para resolver. */
+
 const pixelBoard = document.querySelector('#pixel-board');
 pixelBoard.addEventListener('click', (event) => {
   const event1 = event.target;
   const selected = document.querySelector('.selected');
   if (event.target.classList.contains('pixel')) {
     event1.style.backgroundColor = window
-      .getComputedStyle(selected, null)
+      .getComputedStyle(selected)
       .getPropertyValue('background-color');
   }
 });
@@ -32,7 +33,7 @@ function createPixel(value) {
   createPixelBoard.innerHTML = '';
   for (let line = 0; line < value; line += 1) {
     const createLine = document.createElement('div');
-    createLine.id = 'line';
+    createLine.className = 'pixelLine';
     createPixelBoard.appendChild(createLine);
     for (let column = 0; column < value; column += 1) {
       const createColumn = document.createElement('div');

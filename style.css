@@ -38,9 +38,14 @@ body {
 }
 
 #pixel-board {
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.pixelLine {
   display: flex;
   justify-content: center;
-  padding: 10px;
 }
 
 #generate-board {
@@ -51,6 +56,8 @@ body {
 .pixel {
   background-color: white;
   border: 1px solid black;
+  box-sizing: border-box;
   height: 40px;
   width: 40px;
 }
+
