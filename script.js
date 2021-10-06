@@ -115,16 +115,16 @@ const palleteListener = () => {
   addMultiplesListeners(palette, 'click', palleteEvents);
 };
 
-function paintingPixel() {
+const paintingPixel = (event) => {
+  const pixelColor = event.target.style;
+  pixelColor.backgroundColor = user.paintingColor;
+};
+
+const listenerPixel = () => {
   const allPixels = getAll('.pixel');
 
-  allPixels.forEach((pixel) => {
-    pixel.addEventListener('click', (event) => {
-      const pixelColor = event.target.style;
-      pixelColor.backgroundColor = user.paintingColor;
-    });
-  });
-}
+  addMultiplesListeners(allPixels, 'click', paintingPixel);
+};
 
 function clearPainting() {
   const pixels = getAll('.pixel');
@@ -183,7 +183,7 @@ window.onload = () => {
   generatorPixelRow(5);
   generatorPixelLine(5);
   palleteListener();
-  paintingPixel();
+  listenerPixel();
   clearPainting();
   customizeBoardSize();
   applyNewBoardSize();
