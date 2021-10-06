@@ -28,35 +28,37 @@ const staticElements = {
 
 // functions for the project
 
-function validLimit(limit) {
+const validLimit = (limit) => {
   if (limit > 50) return 50;
   if (limit < 5) return 5;
   return limit;
-}
+};
 
-function generatorPixelLine(limit) {
+const generateBoardElement = (fatherElement, elementType) => {
+  const element = createElement('div');
+  addClass(element, elementType);
+  plugHtml(fatherElement, element);
+};
+
+const generatorPixelLine = (limit) => {
   const rows = getAll('.pixel-row');
   const validatedLimit = validLimit(limit);
 
   rows.forEach((row) => {
     for (let i = 0; i < validatedLimit; i += 1) {
-      const pixel = createElement('div');
-      addClass(pixel, 'pixel');
-      plugHtml(row, pixel);
+      generateBoardElement(row, 'pixel');
     }
   });
-}
+};
 
-function generatorPixelRow(limit) {
+const generatorPixelRow = (limit) => {
   const canvas = staticElements.pixelBoard;
   const validatedLimit = validLimit(limit);
 
   for (let i = 0; i < validatedLimit; i += 1) {
-    const row = createElement('div');
-    addClass(row, 'pixel-row');
-    plugHtml(canvas, row);
+    generateBoardElement(canvas, 'pixel-row');
   }
-}
+};
 
 function saveColor(color) {
   user.paintingColor = color;
