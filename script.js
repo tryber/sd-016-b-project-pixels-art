@@ -7,12 +7,22 @@ const vqvButton = document.getElementById('generate-board');
 const boardSize = document.getElementById('board-size');
 let theRealPixelNumber = 0;
 let color = 'black';
+let colors = ['black'];
 
 function createColors() {
-  const numberOfColors = 4;
-  const colors = ['black', 'red', 'blue', 'green'];
+  const numberOfColors = 4;  
   let div;
-  for (let index = 0; index < numberOfColors; index += 1) {
+  const letters = '0123456789ABCDEF';
+  let newColor = '#'; 
+  for (let index2 = 0; index2 < numberOfColors; index2 += 1) {
+    for (let index1 = 0; index1 < 6; index1 += 1) {
+      newColor += letters[Math.floor(Math.random() * 16)];
+    }    
+    colors.push(newColor);
+    newColor ='#';
+  }
+
+  for (let index = 0; index < numberOfColors; index += 1) {    
     div = document.createElement('div');
     div.classList.add('color');
     colorsDiv.appendChild(div);
@@ -20,6 +30,7 @@ function createColors() {
   }
   colorsChildren[0].classList.add('selected');
 }
+
 function selectColor(event) {
   for (let index = 0; index < colorsChildren.length; index += 1) {
     colorsChildren[index].classList.remove('selected');
@@ -27,11 +38,13 @@ function selectColor(event) {
   event.target.classList.add('selected');
   color = event.target.style.backgroundColor;
 }
+
 function listenerColor() {
   for (let index = 0; index < colorsChildren.length; index += 1) {
     colorsChildren[index].addEventListener('click', selectColor);
   }
 }
+
 function createPixel(number) {
   let pixelNumber = 5;
   let div;
@@ -53,6 +66,7 @@ function createPixel(number) {
     }
   }
 }
+
 function clearBoard() {
   for (let index = 0; index < pixelsChildren.length; index += 1) {
     for (let index1 = 0; index1 < pixelsChildren.length; index1 += 1) {
@@ -60,6 +74,7 @@ function clearBoard() {
     }
   }
 }
+
 clearButton.addEventListener('click', clearBoard);
 function paintPixel() {
   const totalPixel = pixelsChildren.length * pixelsChildren.length;
