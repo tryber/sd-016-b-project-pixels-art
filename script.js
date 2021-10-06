@@ -12,27 +12,9 @@ const removeClass = (element, delClass) => element.classList.remove(delClass);
 
 const plugHtml = (fatherElement, sonElement) => fatherElement.appendChild(sonElement);
 
-const addMultiplesEvents = (element, eventsName, listener) => {
-  const events = eventsName.split(' ');
-
-  events.forEach((event) => {
-    element.addEventListener(event, listener, false);
-  });
-};
-
 const addMultiplesListeners = (arr, eventName, listener) => {
   arr.forEach((element) => {
     element.addEventListener(eventName, listener, false);
-  });
-};
-
-const addMultiplesEventsAndListeners = (arr, eventsName, listener) => {
-  const events = eventsName.split(' ');
-
-  arr.forEach((element) => {
-    events.forEach((event) => {
-      element.addEventListener(event, listener, false);
-    });
   });
 };
 
@@ -135,27 +117,22 @@ const clearPainting = () => {
   });
 };
 
-function customizeBoardSize() {
-  const newBoardSize = staticElements.boardSize;
-
-  newBoardSize.addEventListener('input', (event) => {
+const customizeBoardSize = () => {
+  staticElements.boardSize.addEventListener('input', (event) => {
     user.boardSize = event.target.value;
   });
-}
+};
 
-function resetCanvas() {
-  const board = staticElements.pixelBoard;
+const resetCanvas = () => {
   const allPixels = getAll('.pixel-row');
 
   allPixels.forEach((pixel) => {
-    board.removeChild(pixel);
+    staticElements.pixelBoard.removeChild(pixel);
   });
-}
+};
 
-function applyNewBoardSize() {
-  const generateButton = staticElements.generateBoard;
-
-  generateButton.addEventListener('click', () => {
+const applyNewBoardSize = () => {
+  staticElements.generateBoard.addEventListener('click', () => {
     if (user.boardSize === '') {
       alert('Board inválido!');
     } else {
@@ -164,16 +141,19 @@ function applyNewBoardSize() {
       generatorPixelLine(parseInt(user.boardSize, 10));
     }
   });
-}
+};
 
-function randomColorGenerator() {
+const randomColors = () => Math.random() * 255;
+
+const backgroundRandomColor = () => `rgb(${randomColors()}, ${randomColors()},${randomColors()})`;
+
+const randomColorGenerator = () => {
   const colors = staticElements.palleteCollor;
 
-  for (let i = 1; i < colors.length; i += 1) {
-    colors[i].style.backgroundColor = `rgb(${Math.random() * 255},
-     ${Math.random() * 255},${Math.random() * 255})`;
-  }
-}
+  staticElements.palleteCollor.forEach((color, i) => {
+    colors[i].style.backgroundColor = backgroundRandomColor();
+  });
+};
 
 window.onload = () => {
   randomColorGenerator();
