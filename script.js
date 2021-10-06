@@ -1,34 +1,29 @@
 // functions for working with elements
 
-function getOne(element) {
-  return document.querySelector(element);
-}
+const getOne = (element) => document.querySelector(element);
 
-function getAll(element) {
-  return document.querySelectorAll(element);
-}
+const getAll = (element) => document.querySelectorAll(element);
 
-function createElement(tag) {
-  return document.createElement(tag);
-}
+const createElement = (tag) => document.createElement(tag);
 
-function addClass(element, newClass) {
-  element.classList.add(newClass);
-}
+const addClass = (element, newClass) => element.classList.add(newClass);
 
-function removeClass(element, delClass) {
-  element.classList.remove(delClass);
-}
+const removeClass = (element, delClass) => element.classList.remove(delClass);
 
-function plugHtml(fatherElement, sonElement) {
-  fatherElement.appendChild(sonElement);
-}
+const plugHtml = (fatherElement, sonElement) => fatherElement.appendChild(sonElement);
 
 // universal variables
 
 const user = {
   paintingColor: 'black',
   boardSize: '',
+};
+
+const staticElements = {
+  pixelBoard: getOne('#pixel-board'),
+  clearBoard: getOne('#clear-board'),
+  boardSize: getOne('#board-size'),
+  generateBoard: getOne('#generate-board'),
 };
 
 // functions for the project
@@ -57,7 +52,7 @@ function generatorPixelLine(limit) {
 }
 
 function generatorPixelRow(limit) {
-  const canvas = getOne('#pixel-board');
+  const canvas = staticElements.pixelBoard;
   const validatedLimit = validLimit(limit);
 
   for (let i = 0; i < validatedLimit; i += 1) {
@@ -111,7 +106,7 @@ function changeSelection() {
 
 function clearPainting() {
   const pixels = getAll('.pixel');
-  const resetButton = getOne('#clear-board');
+  const resetButton = staticElements.clearBoard;
 
   resetButton.addEventListener('click', () => {
     pixels.forEach((pixel) => {
@@ -122,7 +117,7 @@ function clearPainting() {
 }
 
 function customizeBoardSize() {
-  const newBoardSize = getOne('#board-size');
+  const newBoardSize = staticElements.boardSize;
 
   newBoardSize.addEventListener('input', (event) => {
     user.boardSize = event.target.value;
@@ -130,7 +125,7 @@ function customizeBoardSize() {
 }
 
 function resetCanvas() {
-  const board = getOne('#pixel-board');
+  const board = staticElements.pixelBoard;
   const allPixels = getAll('.pixel-row');
 
   allPixels.forEach((pixel) => {
@@ -139,7 +134,7 @@ function resetCanvas() {
 }
 
 function applyNewBoardSize() {
-  const generateButton = getOne('#generate-board');
+  const generateButton = staticElements.generateBoard;
 
   generateButton.addEventListener('click', () => {
     if (user.boardSize === '') {
