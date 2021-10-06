@@ -126,17 +126,14 @@ const listenerPixel = () => {
   addMultiplesListeners(allPixels, 'click', paintingPixel);
 };
 
-function clearPainting() {
+const clearPainting = () => {
   const pixels = getAll('.pixel');
-  const resetButton = staticElements.clearBoard;
 
-  resetButton.addEventListener('click', () => {
-    pixels.forEach((pixel) => {
-      const pixelColor = pixel.style;
-      pixelColor.backgroundColor = 'white';
-    });
+  pixels.forEach((pixel) => {
+    const pixelColor = pixel.style;
+    pixelColor.backgroundColor = 'white';
   });
-}
+};
 
 function customizeBoardSize() {
   const newBoardSize = staticElements.boardSize;
@@ -184,6 +181,7 @@ window.onload = () => {
   generatorPixelLine(5);
   palleteListener();
   listenerPixel();
+  staticElements.clearBoard.addEventListener('click', clearPainting);
   clearPainting();
   customizeBoardSize();
   applyNewBoardSize();
