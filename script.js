@@ -3,6 +3,9 @@ const colorsChildren = colorsDiv.children;
 const pixelsDiv = document.querySelector('#pixel-board');
 const pixelsChildren = pixelsDiv.children;
 const clearButton = document.getElementById('clear-board');
+const vqvButton = document.getElementById('generate-board');
+const boardSize = document.getElementById('board-size');
+let theRealPixelNumber = 0;
 let color = 'black';
 
 function createColors() {
@@ -17,23 +20,24 @@ function createColors() {
   }
   colorsChildren[0].classList.add('selected');
 }
-function selectColor(listenerColor) {
+function selectColor(event) {
   for (let index = 0; index < colorsChildren.length; index += 1) {
     colorsChildren[index].classList.remove('selected');
   }
-  listenerColor.target.classList.add('selected');
-  color = listenerColor.target.style.backgroundColor;
+  event.target.classList.add('selected');
+  color = event.target.style.backgroundColor;
 }
 function listenerColor() {
   for (let index = 0; index < colorsChildren.length; index += 1) {
     colorsChildren[index].addEventListener('click', selectColor);
   }
 }
-function createPixel() {
-  const pixelNumber = 5;
+function createPixel(number) {
+  let pixelNumber = 5;
   let div;
   let count = 0;
   let countId = 0;
+  if (number > 4) { pixelNumber = number; }
   for (let index1 = 0; index1 < pixelNumber; index1 += 1) {
     div = document.createElement('div');
     div.classList.add('pixels-lines');
@@ -62,12 +66,31 @@ function paintPixel() {
   let countId = 1;
   for (let index = 0; index < totalPixel; index += 1) {
     const ids = document.getElementById(countId);
-    ids.addEventListener('click', function SetColor() {
+    ids.addEventListener('click', function setColor() {
       ids.style.backgroundColor = color;
     });
     countId += 1;
   }
 }
+
+vqvButton.addEventListener('click', () => {
+  if (boardSize.value === '') {
+    alert('Board inválido!');
+  }
+  theRealPixelNumber = boardSize.value;
+  if (boardSize.value > 50) {
+    theRealPixelNumber = 50;
+  }  
+  if (theRealPixelNumber > 4 && theRealPixelNumber < 51) {
+    for (let index = 0; index < pixelsChildren.length; index += 1) {
+      pixelsChildren[index].remove();
+      index -= 1;
+    }
+    createPixel(theRealPixelNumber);
+    listenerColor();
+    paintPixel();
+  }
+});
 
 window.onload = function start() {
   createColors();

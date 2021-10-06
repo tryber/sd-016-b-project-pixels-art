@@ -13,9 +13,14 @@
 }
 
 #pixel-board {
-  margin-bottom: 0;
+  margin-bottom: 0;  
 }
 
 .pixels-lines {
   margin-bottom: -4px;
+}
+
+#button-section { 
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
