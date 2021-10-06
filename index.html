@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Trybe Palette</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 id="title">Paleta de Cores</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <article class="config-article">
+                <section id="color-palette">
+                    <div class="color selected"></div>
+                    <div class="color"></div>
+                    <div class="color"></div>
+                    <div class="color"></div>
+                </section>
+                <section id="clear-board">
+                    <button class="btn">Limpar</button>
+                </section>
+                <section>
+                    <input type="number" name="area" min="1" id="board-size">
+                    <button id="generate-board">VQV</button>
+                </section>
+            </article>
+            <article class="canvas-article">
+                <section id="pixel-board">
+                </section>
+            </article>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
