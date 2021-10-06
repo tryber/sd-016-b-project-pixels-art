@@ -12,6 +12,30 @@ const removeClass = (element, delClass) => element.classList.remove(delClass);
 
 const plugHtml = (fatherElement, sonElement) => fatherElement.appendChild(sonElement);
 
+const addMultiplesEvents = (element, eventsName, listener) => {
+  const events = eventsName.split(' ');
+
+  events.forEach((event) => {
+    element.addEventListener(event, listener, false);
+  });
+};
+
+const addMultiplesListeners = (arr, eventName, listener) => {
+  arr.forEach((element) => {
+    element.addEventListener(eventName, listener, false);
+  });
+};
+
+const addMultiplesEventsAndListeners = (arr, eventsName, listener) => {
+  const events = eventsName.split(' ');
+
+  arr.forEach((element) => {
+    events.forEach((event) => {
+      element.addEventListener(event, listener, false);
+    });
+  });
+};
+
 // universal variables
 
 const user = {
@@ -24,6 +48,7 @@ const staticElements = {
   clearBoard: getOne('#clear-board'),
   boardSize: getOne('#board-size'),
   generateBoard: getOne('#generate-board'),
+  palleteCollor: getAll('.color'),
 };
 
 // functions for the project
@@ -60,20 +85,35 @@ const generatorPixelRow = (limit) => {
   }
 };
 
-function saveColor(color) {
+const saveColor = (color) => {
   user.paintingColor = color;
-}
+};
 
-function getColor() {
-  const palette = getAll('.color');
+const getColor = (event) => {
+  const selectColor = getComputedStyle(event.target).backgroundColor;
+  saveColor(selectColor);
+};
 
-  palette.forEach((color) => {
-    color.addEventListener('click', (event) => {
-      const selectColor = getComputedStyle(event.target).backgroundColor;
-      saveColor(selectColor);
-    });
-  });
-}
+const resetSelection = () => {
+  const selectedColor = getOne('.selected');
+  removeClass(selectedColor, 'selected');
+};
+
+const changeSelection = (event) => {
+  resetSelection();
+  addClass(event.target, 'selected');
+};
+
+const palleteEvents = (event) => {
+  getColor(event);
+  changeSelection(event);
+};
+
+const palleteListener = () => {
+  const palette = staticElements.palleteCollor;
+
+  addMultiplesListeners(palette, 'click', palleteEvents);
+};
 
 function paintingPixel() {
   const allPixels = getAll('.pixel');
@@ -82,22 +122,6 @@ function paintingPixel() {
     pixel.addEventListener('click', (event) => {
       const pixelColor = event.target.style;
       pixelColor.backgroundColor = user.paintingColor;
-    });
-  });
-}
-
-function resetSelection() {
-  const selectedColor = getOne('.selected');
-  removeClass(selectedColor, 'selected');
-}
-
-function changeSelection() {
-  const palette = getAll('.color');
-
-  palette.forEach((color) => {
-    color.addEventListener('click', (event) => {
-      resetSelection();
-      addClass(event.target, 'selected');
     });
   });
 }
@@ -146,7 +170,7 @@ function applyNewBoardSize() {
 }
 
 function randomColorGenerator() {
-  const colors = getAll('.color');
+  const colors = staticElements.palleteCollor;
 
   for (let i = 1; i < colors.length; i += 1) {
     colors[i].style.backgroundColor = `rgb(${Math.random() * 255},
@@ -158,9 +182,8 @@ window.onload = () => {
   randomColorGenerator();
   generatorPixelRow(5);
   generatorPixelLine(5);
-  getColor();
+  palleteListener();
   paintingPixel();
-  changeSelection();
   clearPainting();
   customizeBoardSize();
   applyNewBoardSize();
