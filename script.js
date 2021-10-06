@@ -150,9 +150,9 @@ const backgroundRandomColor = () => `rgb(${randomColors()}, ${randomColors()},${
 const randomColorGenerator = () => {
   const colors = staticElements.palleteCollor;
 
-  staticElements.palleteCollor.forEach((color, i) => {
+  for (let i = 1; i < colors.length; i += 1) {
     colors[i].style.backgroundColor = backgroundRandomColor();
-  });
+  }
 };
 
 window.onload = () => {
