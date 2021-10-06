@@ -29,13 +29,9 @@ const staticElements = {
 // functions for the project
 
 function validLimit(limit) {
-  let newLimit = limit;
-  if (limit > 50) {
-    newLimit = 50;
-  } else if (limit < 5) {
-    newLimit = 5;
-  }
-  return newLimit;
+  if (limit > 50) return 50;
+  if (limit < 5) return 5;
+  return limit;
 }
 
 function generatorPixelLine(limit) {
