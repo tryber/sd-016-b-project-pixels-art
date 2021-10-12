@@ -18,20 +18,19 @@ for(let index1 =0; index1 < buttonQuantity; index1 +=1) {
 
 let pixelBoard = document.querySelector('#pixel-board');
 let pixelLine = 5;
+let row = 5;
 
-for(index2 = 0; index2 < pixelLine; index2+=1) {
-    let pixelDiv = document.createElement('div');
-    pixelDiv.classList = 'pixel';
-    pixelDiv.style.border = '1px solid black';
-    pixelDiv.style.backgroundColor = 'white';
-
+for(let index2 = 0; index2 < pixelLine; index2+=1) {
+    let pixelDiv =document.createElement('div');
+    pixelDiv.id += 'pixel-board'
     pixelBoard.appendChild(pixelDiv);
-    let row = 5;
-    for(index3 = 0; index3 < row; index3+=1) {
+  
+    for(let index3 = 0; index3 < row; index3+=1) {
        let pixelRow = document.createElement('div');
-       pixelRow.classList = 'pixel';
+       pixelRow.classList += "pixel";
        pixelRow.style.border = '1px solid black';
        pixelRow.style.backgroundColor = 'white';
+       
        pixelDiv.appendChild(pixelRow); 
     }
 }

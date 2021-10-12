@@ -16,6 +16,7 @@ main {
     width: 100%;
     float: left;
     margin-left: 15px;
+    margin-bottom: 15px;
 }
 
 .color {
@@ -29,8 +30,8 @@ main {
 #pixel-board {
     width: 100%;
     float: left;
-    margin-left: 30px;
-    margin-top: 30px;
+    margin-left: 15px;
+    margin-top: 0px;
     
 
 
