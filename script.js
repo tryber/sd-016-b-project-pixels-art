@@ -1,19 +1,37 @@
 let inputButton = document.querySelector('#color-palette');
+
 let buttonQuantity = 4;
-
-for(let index = 0; index < buttonQuantity; index+=1) {
-    let div = document.createElement('div');
-    div.className = 'color'
-    inputButton.appendChild(div);
-
-}
+let selectorColor = '';
 
 
-let divPixelBoard = document.querySelectorAll('.color');
+let div = document.querySelectorAll('.color');
 
 for(let index1 =0; index1 < buttonQuantity; index1 +=1) {
+    let div = document.createElement('div');
+    div.className = 'color'   
     let colorButton = ['black', 'red', 'blue', 'green'];
-    divPixelBoard[index1].style.backgroundColor = colorButton[index1];        
+switch(index1) {
+    case 0:
+        div.classList.add('color', 'selected');
+        selectorColor =  div.style.backgroundColor = colorButton[index1];
+        break  
+    case 1:
+        div.classList.add('color');
+        selectorColor =  div.style.backgroundColor = colorButton[index1];
+        break  
+    case 2:
+        div.classList.add('color');
+        selectorColor =  div.style.backgroundColor = colorButton[index1];
+        break  
+    default:
+        div.classList.add('color');
+        selectorColor =  div.style.backgroundColor = colorButton[index1];
+        break  
+}
+
+inputButton.appendChild(div);
+
+
 }
 
 let pixelBoard = document.querySelector('#pixel-board');
@@ -22,7 +40,7 @@ let row = 5;
 
 for(let index2 = 0; index2 < pixelLine; index2+=1) {
     let pixelDiv =document.createElement('div');
-    pixelDiv.id += 'pixel-board'
+    pixelDiv.id += 'pixel-line'
     pixelBoard.appendChild(pixelDiv);
   
     for(let index3 = 0; index3 < row; index3+=1) {
@@ -34,3 +52,36 @@ for(let index2 = 0; index2 < pixelLine; index2+=1) {
        pixelDiv.appendChild(pixelRow); 
     }
 }
+
+function colorPixel () {
+    let colorPalette =document.querySelector('#color-palette');
+    let colorSelect = document.querySelectorAll('.color');
+       
+    
+    for (i of colorSelect) {
+        i.addEventListener('click', function() {
+
+            selectorColor = this.style.backgroundColor;
+            let element = document.querySelector('.selected');            
+            element.classList.remove('selected');
+            this.classList.add('selected');
+            
+            
+
+        })
+    }
+
+}
+
+colorPixel();
+
+function coloredPixel() {
+  let whitepixel = document.querySelectorAll('.pixel');
+  for(let i of whitepixel) {
+      i.addEventListener('click', function() {
+          this.style.backgroundColor = selectorColor;
+      })
+  }
+}  
+
+coloredPixel();
