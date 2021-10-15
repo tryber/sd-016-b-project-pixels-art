@@ -9,7 +9,7 @@ let div = document.querySelectorAll('.color');
 for(let index1 =0; index1 < buttonQuantity; index1 +=1) {
     let div = document.createElement('div');
     div.className = 'color'   
-    let colorButton = ['black', 'red', 'blue', 'green'];
+    let colorButton = ['black', 'red', 'blue', 'purple'];
 switch(index1) {
     case 0:
         div.classList.add('color', 'selected');
@@ -17,16 +17,19 @@ switch(index1) {
         break  
     case 1:
         div.classList.add('color');
-        selectorColor =  div.style.backgroundColor = colorButton[index1];
+        selectorColor[index1] =  div.style.backgroundColor = colorButton[index1];
         break  
     case 2:
         div.classList.add('color');
-        selectorColor =  div.style.backgroundColor = colorButton[index1];
+        selectorColor[index1] =  div.style.backgroundColor = colorButton[index1];
         break  
     default:
         div.classList.add('color');
-        selectorColor =  div.style.backgroundColor = colorButton[index1];
-        break  
+        selectorColor[index1] =  div.style.backgroundColor = colorButton[index1];
+        break
+
+    
+    
 }
 
 inputButton.appendChild(div);
@@ -54,7 +57,6 @@ for(let index2 = 0; index2 < pixelLine; index2+=1) {
 }
 
 function colorPixel () {
-    let colorPalette =document.querySelector('#color-palette');
     let colorSelect = document.querySelectorAll('.color');
        
     
