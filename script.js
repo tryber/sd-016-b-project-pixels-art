@@ -87,3 +87,27 @@ function coloredPixel() {
 }  
 
 coloredPixel();
+
+
+let buttonInputSection = document.querySelector('#button-input');
+let clearButton = document.createElement('button');
+clearButton.innerHTML = 'Limpar';
+clearButton.type = 'submit';
+clearButton.className = 'limpar';
+clearButton.id = 'clear-board';
+
+buttonInputSection.appendChild(clearButton);
+
+function clearBoard () {
+    let clearButton = document.querySelector('#clear-board');
+    clearButton.addEventListener('click', function () {
+        let pixel = document.querySelectorAll('.pixel');
+        for(let i of pixel) {
+            i.style.backgroundColor = 'white';
+        }
+
+
+    })
+}
+
+clearBoard();
