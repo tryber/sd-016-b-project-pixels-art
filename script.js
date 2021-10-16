@@ -1,6 +1,8 @@
 let inputButton = document.querySelector('#color-palette');
 
 let buttonQuantity = 4;
+let pixelLine = 5;
+let row = 5;
 let selectorColor = '';
 
 
@@ -38,8 +40,7 @@ inputButton.appendChild(div);
 }
 
 let pixelBoard = document.querySelector('#pixel-board');
-let pixelLine = 5;
-let row = 5;
+
 
 for(let index2 = 0; index2 < pixelLine; index2+=1) {
     let pixelDiv =document.createElement('div');
@@ -111,3 +112,68 @@ function clearBoard () {
 }
 
 clearBoard();
+
+buttonInputSection = document.querySelector('#button-input');
+let boardSizeInput = document.createElement('input');
+boardSizeInput.id = 'board-size'
+boardSizeInput.placeholder = 'Tamanho do Quadro de Pixel'
+boardSizeInput.style.border = '1px solid black';
+boardSizeInput.type = 'number'
+boardSizeInput.min = '1';
+boardSizeInput.max = '50';
+boardSizeInput.minLength = '0';
+
+let generateBoardButton = document.createElement('button');
+generateBoardButton.id = 'generate-board';
+generateBoardButton.innerHTML = 'VQV';
+
+
+buttonInputSection.appendChild(boardSizeInput);
+buttonInputSection.appendChild(generateBoardButton);
+
+function captureInput () {
+    boardSizeInput = document.querySelector('#board-size');
+    pixelLine = boardSizeInput.value;
+    row = boardSizeInput.value;
+    if(pixelLine <= 0 || row <= 0 || boardSizeInput.value < 0) {
+        alert ('Board inválido!');
+    }
+    if(pixelLine < 5 || row < 5) {
+        pixelLine = 5;
+        row = 5;
+    } else {
+        pixelLine;
+        row;
+    }
+    if(pixelLine > 50 || row > 50) {
+        pixelLine = 50;
+        row = 50;
+    } else {
+        pixelLine;
+        row;
+    }
+
+    changePixelFrame(pixelLine, row);
+    
+}
+
+generateBoardButton = document.querySelector('#generate-board');
+
+generateBoardButton.addEventListener('click', captureInput)
+
+function changePixelFrame (pixelDiv, pixelRow) {
+    pixelBoard = document.querySelector('#pixel-board');
+    pixelBoard.innerHTML = '';
+    for(let i = 0; i < pixelLine; i += 1) {
+        pixelDiv = document.createElement('div');
+        pixelDiv.id = 'pixel-line'
+        pixelBoard.appendChild(pixelDiv);
+        for (let i2 = 0 ; i2 < row; i2 += 1) {
+            pixelRow = document.createElement('div');
+            pixelRow.style.border = '1px solid black';
+            pixelRow.style.backgroundColor = 'white';    
+            pixelDiv.appendChild(pixelRow);
+            pixelRow.classList.add('pixel');
+        }
+    }
+}

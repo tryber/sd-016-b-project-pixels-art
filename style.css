@@ -26,6 +26,22 @@ main {
     margin-bottom: 15px;
 }
 
+#clear-board {
+    padding: 10px;
+}
+
+#board-size {
+    width: 200px;
+    padding: 10px;
+    margin-left: 15px;
+    
+}
+
+#generate-board {
+    padding: 10px;
+    margin-left: 15px;
+}
+
 .color {
     height: 40px;
     width: 40px;
