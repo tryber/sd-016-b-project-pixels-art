@@ -1,0 +1,37 @@
+.color {
+    display: inline-block;
+    border: 1px solid black;
+    height: 60px;
+    width: 60px;
+}
+
+#firstColor {
+    background-color: black;
+}
+
+#secondColor {
+    background-color: red;
+}
+
+#thirdColor {
+    background-color: green;
+}
+
+#fourthColor {
+    background-color: blue;
+}
+
+#pixel-board {
+    width: 200px;
+    height: 200px;
+    font-size: 0;
+}
+
+.pixel {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
