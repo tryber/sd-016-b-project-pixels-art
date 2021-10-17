@@ -1,6 +1,8 @@
-const board = document.getElementById('pixel-board')
-const palette = document.getElementById('color-palette')
-const colorList = document.getElementsByClassName('color')
+const board = document.getElementById('pixel-board');
+const palette = document.getElementById('color-palette');
+const colorList = document.getElementsByClassName('color');
+const pixel = document.getElementsByClassName('pixel');
+const clearButton = document.getElementById('clear-board');
 
 function pixelBoard() {
     for(let index = 1; index <= 25; index += 1) {
@@ -31,9 +33,18 @@ function paintPixels(event) {
     board.style.backgroundColor = 'white';
 }
 
+function resetBoard() {
+    for (let i = 0; i < pixel.length; i += 1) {
+        const actualPixel = pixel[i];
+        actualPixel.style.backgroundColor = 'white';
+    }
+}
+
 palette.addEventListener('click', selectedColor);
 
 board.addEventListener('click', paintPixels);
+
+clearButton.addEventListener('click', resetBoard);
 
 
 window.onload = function() {
