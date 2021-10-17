@@ -22,11 +22,20 @@ function selectedColor(event) {
     }
 }
 
-function setColorSelectedEvent() {
-    palette.addEventListener('click', selectedColor)
+function paintPixels(event) {
+    const colorSelected = document.querySelector('.selected');
+    const paintIt = window.getComputedStyle(colorSelected).getPropertyValue('background-color');
+    const element = event.target;
+
+    element.style.backgroundColor = paintIt;
+    board.style.backgroundColor = 'white';
 }
+
+palette.addEventListener('click', selectedColor);
+
+board.addEventListener('click', paintPixels);
+
 
 window.onload = function() {
     pixelBoard();
-    setColorSelectedEvent();
 }
