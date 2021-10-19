@@ -1,50 +1,64 @@
-const colorPalette = document.querySelector('#color-palette');
-const mainTag = document.getElementsByTagName('main')[0];
+const boardColor = document.getElementById('color-palette');
+const pixelBoard = document.getElementById('pixel-board');
+const buttonSize = document.getElementById('generate-board');
+const buttonClear = document.getElementById('clear-board');
+const colorSelect = document.getElementsByClassName('color');
+
+function randomColor() {
+  return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 
+  ${Math.floor(Math.random() * 256)} )`;
+}
 
 function createColor() {
-  const arrColor = ['black', 'green', 'red', 'blue'];
+  const arrColor = ['black', randomColor(), randomColor(), randomColor()];
   for (let i = 0; i < arrColor.length; i += 1) {
-    colorPalette.children[i].style.backgroundColor = arrColor[i];
+    boardColor.children[i].style.backgroundColor = arrColor[i];
     if (arrColor[i] === 'black') {
-      colorPalette.children[0].setAttribute('id', 'black');
-      colorPalette.children[0].className = 'color selected';
+      boardColor.children[0].className = 'color selected';
     } else {
-      colorPalette.children[i].setAttribute('id', arrColor[i]);
+      boardColor.children[i].className = 'color';
     }
   }
 }
 
-function selectColor(cor) {
+function clearBoard() {
+  while (pixelBoard.hasChildNodes()) {
+    pixelBoard.removeChild(pixelBoard.lastChild);
+  }
+}
+
+function colorCall(color) {
   document.querySelector('.selected').className = 'color';
-  const singleColor = cor;
+  const singleColor = color;
   singleColor.target.className = 'color selected';
 }
 
-function listColor() {
-  const black = document.querySelector('#black');
-  black.addEventListener('click', selectColor);
-
-  const green = document.querySelector('#green');
-  green.addEventListener('click', selectColor);
-
-  const red = document.querySelector('#red');
-  red.addEventListener('click', selectColor);
-
-  const blue = document.querySelector('#blue');
-  blue.addEventListener('click', selectColor);
+function selectColor() {
+  for (let i = 0; i < 4; i += 1) {
+    colorSelect[i].addEventListener('click', colorCall);
+  }
 }
 
-// Requisito 4
-const createUl = document.createElement('ul');
-mainTag.appendChild(createUl);
-createUl.setAttribute('id', 'pixel-board');
-const pixelsBoard = document.getElementById('pixel-board');
-function pixelBoard() {
-  for (let i = 1; i <= 25; i += 1) {
-    const createLi = document.createElement('li');
-    pixelsBoard.appendChild(createLi);
-    createLi.setAttribute('class', 'pixel');
+function bSize(boardSize) {
+  for (let i = 1; i <= boardSize ** 2; i += 1) {
+    const createPixel = document.createElement('div');
+    pixelBoard.appendChild(createPixel);
+    createPixel.className = 'pixel';
+    pixelBoard.style.width = `${(boardSize ** 2) * 10}px`;
   }
+}
+
+function pixelsBoard() {
+  let boardSize = document.getElementById('board-size').value;
+  if (!boardSize) {
+    window.alert('Board inválido!');
+  } else if (boardSize < 5) {
+    boardSize = 5;
+  } else if (boardSize > 50) {
+    boardSize = 50;
+  }
+  clearBoard();
+  bSize(boardSize);
 }
 
 function colorPaint(color) {
@@ -55,24 +69,24 @@ function colorPaint(color) {
   }
 }
 function pixelsPaint() {
-  pixelsBoard.addEventListener('click', colorPaint);
+  pixelBoard.addEventListener('click', colorPaint);
 }
 
-// Requisito 9
-function clear() {
-  for (let i = 0; i < 25; i += 1) {
-    document.getElementsByClassName('pixel')[i].style.backgroundColor = 'white';
-  }
+function vqv() {
+  // buttonSize.addEventListener('click', clearBoard);
+  buttonSize.addEventListener('click', pixelsBoard);
 }
-function clearBoard() {
-  const button = document.querySelector('#clear-board');
-  button.addEventListener('click', clear);
+
+function clear() {
+  // buttonClear.addEventListener('click', clearBoard);
+  buttonClear.addEventListener('click', pixelsBoard);
 }
 
 window.onload = function init() {
-  pixelsPaint();
+  vqv();
+  clear();
   createColor();
-  listColor();
-  pixelBoard();
-  clearBoard();
+  selectColor();
+  pixelsPaint();
+  pixelsBoard();
 };
