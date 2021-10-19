@@ -1,8 +1,5 @@
-const boardColor = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
 const buttonSize = document.getElementById('generate-board');
-const buttonClear = document.getElementById('clear-board');
-const colorSelect = document.getElementsByClassName('color');
 
 function randomColor() {
   return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 
@@ -10,6 +7,7 @@ function randomColor() {
 }
 
 function createColor() {
+  const boardColor = document.getElementById('color-palette');
   const arrColor = ['black', randomColor(), randomColor(), randomColor()];
   for (let i = 0; i < arrColor.length; i += 1) {
     boardColor.children[i].style.backgroundColor = arrColor[i];
@@ -18,24 +16,6 @@ function createColor() {
     } else {
       boardColor.children[i].className = 'color';
     }
-  }
-}
-
-function clearBoard() {
-  while (pixelBoard.hasChildNodes()) {
-    pixelBoard.removeChild(pixelBoard.lastChild);
-  }
-}
-
-function colorCall(color) {
-  document.querySelector('.selected').className = 'color';
-  const singleColor = color;
-  singleColor.target.className = 'color selected';
-}
-
-function selectColor() {
-  for (let i = 0; i < 4; i += 1) {
-    colorSelect[i].addEventListener('click', colorCall);
   }
 }
 
@@ -48,17 +28,38 @@ function bSize(boardSize) {
   }
 }
 
-function pixelsBoard() {
-  let boardSize = document.getElementById('board-size').value;
+function clearBoard() {
+  while (pixelBoard.hasChildNodes()) {
+    pixelBoard.removeChild(pixelBoard.lastChild);
+  }
+}
+
+function AlertMsg() {
+  const boardSize = document.getElementById('board-size').value;
   if (!boardSize) {
     window.alert('Board inválido!');
-  } else if (boardSize < 5) {
+  }
+}
+
+function pixelsBoard() {
+  let boardSize = document.getElementById('board-size').value;
+  if (boardSize < 5) {
     boardSize = 5;
   } else if (boardSize > 50) {
     boardSize = 50;
   }
   clearBoard();
   bSize(boardSize);
+}
+
+function vqv() {
+  buttonSize.addEventListener('click', pixelsBoard);
+  buttonSize.addEventListener('click', AlertMsg);
+}
+
+function clear() {
+  const buttonClear = document.getElementById('clear-board');
+  buttonClear.addEventListener('click', pixelsBoard);
 }
 
 function colorPaint(color) {
@@ -68,25 +69,29 @@ function colorPaint(color) {
     coloredPaint.style.backgroundColor = colored;
   }
 }
+
 function pixelsPaint() {
   pixelBoard.addEventListener('click', colorPaint);
 }
 
-function vqv() {
-  // buttonSize.addEventListener('click', clearBoard);
-  buttonSize.addEventListener('click', pixelsBoard);
+function colorCall(color) {
+  document.querySelector('.selected').className = 'color';
+  const singleColor = color;
+  singleColor.target.className = 'color selected';
 }
 
-function clear() {
-  // buttonClear.addEventListener('click', clearBoard);
-  buttonClear.addEventListener('click', pixelsBoard);
+function selectColor() {
+  const colorSelect = document.getElementsByClassName('color');
+  for (let i = 0; i < 4; i += 1) {
+    colorSelect[i].addEventListener('click', colorCall);
+  }
 }
 
 window.onload = function init() {
-  vqv();
-  clear();
+  pixelsBoard();
   createColor();
   selectColor();
   pixelsPaint();
-  pixelsBoard();
+  vqv();
+  clear();
 };
