@@ -23,7 +23,7 @@ function createMatriz() {
 createMatriz();
 
 // requisito 12
-// gerar cores aletorias:  esta dando errado, descobrir porq...
+// gerar cores aletorias:
 function gerarCorRandom() {
   const r = Math.random() * 255;
   const g = Math.random() * 255;
@@ -84,7 +84,7 @@ function clearBoard() {
 }
 clearBoard();
 
-// requisito 11
+// requisito 11: bônus
 // input e botao para aumentar o quadro de pintura:
 const input = document.getElementById('board-size');
 const buttonInitial = document.getElementById('generate-board');
@@ -98,7 +98,7 @@ input.addEventListener('keyup', (event) => { // Tainá me ajudou nesta parte, fo
   }
 });
 
-// requisito 10
+// requisito 10: bônus
 // botao que muda o tamanho do quadro de pintura caso receba um valor n:
 buttonInitial.addEventListener('click', () => {
   const myNode = document.getElementById(boardID);
