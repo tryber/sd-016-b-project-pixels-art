@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://blog.costaatacado.com.br/wp-content/uploads/2018/03/lapis_cores.png');
+  background-size: 60%;
+}
+
+#title {
+  font-size: 80px;
+  color: rgb(4, 19, 34);
+  font-family: cursive;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.superprof.com.br/blog/wp-content/uploads/2018/08/abstrata-pintura-1060x770.jpg');
+  background-size: 100%;
+}
+
+.color {
+  border-radius: 30px;
+  display: flex;
+  height: 40px;
+  width: 40px;
+  justify-content: space-between;
+}
+
+#color-palette {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+/* requisito 2  do black ao blue */
+#black {
+  border: solid black 1px;
+  left: 100px;
+}
+
+#corRandon1 {
+  border: solid black 1px;
+}
+
+#corRandon2 {
+  border: solid black 1px;
+}
+
+#corRandon3 {
+  border: solid black 1px;
+}
+
+#input-buttons {
+  padding: 30px;
+}
+
+#pixel-board {
+  display: block;
+  padding: 30px;
+  width: auto;
+  height: auto;
+}
+
+/* requisito 5 */
+.pixel {
+  background-color: white;
+  border: solid black 1px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+.line {
+  display: block;
+  height: 40px;
+}
+
+#generate-board {
+  color: black;
+  background-color: rgb(24, 165, 24);
+  width: 60px;
+}
+
+#clear-board {
+  color: black;
+  background-color: rgb(184, 41, 41);
+  width: 70px;
+}
+
+footer {
+  top: 100%;
+  padding: 150px;
+  display: flex;
+  background-image: url('https://entendaantes.com.br/wp-content/uploads/2019/05/8-truques-de-pintura-1170x780.jpg');
+  background-size: 100%;
+  justify-content: flex-end;
+}
+
+footer p {
+  color: white;
+}
