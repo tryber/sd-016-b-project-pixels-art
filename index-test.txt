@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    
+    <title></title>
+  </head>
+  <body>
+    <h1 id="title">"Paleta de Cores"</h1>
+    <div id="color-palette">
+      <div id='1' class="color black"></div>
+      <div id='2' class="color red"></div>
+      <div id='3' class="color blue"></div>
+      <div id='4' class="color green"></div>
+    </div>
+    <div id="pixel-board">
+      <div class="pixels-line">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>
+      <div class="pixels-line">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>
+      <div class="pixels-line">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>
+      <div class="pixels-line">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>
+      <div class="pixels-line">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>      
+    </div>  
+    <script type="text/javascript" src="script.js"></script>  
+  </body>
+</html>

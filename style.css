@@ -1,0 +1,26 @@
+.color {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.pixel {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+#pixel-board {
+  margin-bottom: 0;
+}
+
+.pixels-lines {
+  margin-bottom: -4px;
+}
+
+#button-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
