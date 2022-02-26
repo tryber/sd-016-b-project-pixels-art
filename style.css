@@ -1,12 +1,12 @@
 #title{
     color:black;
     display: block;
+    text-align: center;
 }
 #color-palette{
     position: absolute;
     top: 70px;
     display: block;
-    width: 80%;
     border: solid 5px black;
 }
 .color{

@@ -19,13 +19,9 @@ let quadro = document.getElementById('pixel-board');
 function criaColuna(){
     for (let i=2; i <=n; i+=1){
         let pixelColuna = document.createElement('div');
-        criaLinha()
+        criaLinha();
         quadro.appendChild(pixelColuna);
     }
-
-    // for(let i=0; i < pixelColuna; i+=1){
-    //     pixelColuna.className = "pixel"
-    // }
 }
 criaColuna()
 
@@ -44,20 +40,20 @@ function botaoReiniciar (){
     let botaoBranco = document.createElement('button');
     let corpoDoSite = document.getElementsByTagName('body')[0];
     botaoBranco.innerHTML = 'Limpar';
-    botaoBranco.id = "clear-board"
+    botaoBranco.id = "clear-board";
     corpoDoSite.appendChild(botaoBranco);
 }
 botaoReiniciar()
 
 let botaoBranco = document.querySelector("#clear-board");
 
-botaoBranco.addEventListener("click", reiniciaJogo)
+botaoBranco.addEventListener("click", reiniciaJogo);
 
 let branco =  'rgb(255, 255, 255)';
 function reiniciaJogo(){
     let quadrados = document.querySelectorAll(".pixel");
     for (let i =0; i<quadrados.length; i+=1){
-        quadrados[i].style.backgroundColor = branco
+        quadrados[i].style.backgroundColor = branco;
     }
 }
 
