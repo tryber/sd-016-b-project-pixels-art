@@ -4,6 +4,7 @@ body {
 }
 
 .container {
+    border: 5px solid wheat;
     display: flex;
     justify-content: center;
     align-content: center;
