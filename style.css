@@ -8,6 +8,7 @@
 
 #pixel-board {
   line-height: 0;
+  width: fit-content;
 }
 
 .pixel {
