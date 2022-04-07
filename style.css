@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color: cornflowerblue;
+  font-family: sans-serif;
+  background-color: rgb(203, 230, 203);
 }
 
 .title__content {
@@ -70,8 +71,11 @@ body {
 #clear-board {
   font-size: 18px;
   padding: 5px;
+  border-radius: 20%;
+  background-color: rgb(139, 202, 130);
 }
 
 .btn-content {
   text-align: center;
 }
+
